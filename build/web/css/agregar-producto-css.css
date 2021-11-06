@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+body{
+    background-color: #ffffff;
+}
+#contenedor{
+    height: 2000px;
+    width: 95%;
+    padding: 2px;
+    margin: 1px auto;
+  /*  background-color: blue;*/
+}
+
+
+#header{
+    height: 8%;
+    padding: 2px;
+  /*  background: rgb(10, 134, 72); */
+}
+/*barra usuario*/
+
+.barra-usuario{
+    height: 4%;
+
+}
+.navegacionUser{
+    width: 90%;
+    margin: 2px auto;
+    background: #e6dddd;
+    border-radius: 15px;
+    border:black 0.5px solid;
+}
+
+
+.navegacionUser ul{
+    list-style: none;
+    border-radius: 5px;
+}
+
+.menu2 > li{
+	position: relative;
+	display: inline-block;
+}
+
+.menu2 > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: #353535;
+	text-decoration: none;
+}
+
+.menu2 li a:hover{
+	color: #CE7D35;
+	transition: all .3s;
+}
+
+.menu2 img{
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+
+#publicidad{
+    height: 14%;
+    padding: 3px;
+  /*  background: #0b992f; */
+    padding: 3px;
+    border: #333333 solid 0.5px;
+
+}
+
+#contenido{
+    margin: 5px;
+    padding: 3px;
+    height: 50%;
+ /*   background: #02d5fa;*/
+   
+    border: solid 0.5px black;
+  
+}
+
+#contenido h2{
+    text-align: center;
+    font-size: 30px;
+}
+
+#contenido table{
+  align-items: center;
+}
+
+
+#contenido input{
+    height: 27px;
+    width: 300px;
+}
+#contenido select{
+    
+   width: 306px;
+}
+.contenidoText{
+    float: right;
+    height: 80%;
+    width: 41%;
+    padding: 60px;
+}
+.contenidoText p{
+    font-size: 20px;
+    justify-content: center;
+}
+.contenidoText h3{
+    font-size: 25px;
+}
+
+
+.InisiarSesion{
+/*border: solid black;*/
+float: left;
+height: 80%;
+width: 41%;
+padding: 50px;
+}
+
+.Registrarse{
+
+margin-right: auto;
+height: 80%;
+width: 41%;
+padding: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#fooster{
+    height: 10%;
+    background: #535151;
+    padding: 3px;
+    margin: auto;
+    color: #fff;
+}
+/*imagenes del header */
+#logo img{
+    height: 140px;
+    width: 400px;
+    padding: 2px;
+    border-radius: 3px;
+    float: left;
+    border: solid 0.5px black;
+}
+
+#CuentaUser{
+    border: solid 0.5px black;
+    height: 140px;
+    width: 300px;
+    padding: 2px;
+    border-radius: 3px;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #e6dddd;
+
+}
+#CuentaUser ul {
+    list-style: none;
+
+}
+#CuentaUser img {
+    height: 60px;
+    width: 60px;    
+}
+
+#CuentaUser li a:hover{
+	color: #CE7D35;
+	transition: all .3s;
+}
+
+/*estilo de productos contenedor*/
+.producto{
+    height: 19%;
+    background: #e6dddd;
+    padding: 3px;
+    margin: 3px;
+    border: solid 0.5px black;
+    border-radius: 3px;
+
+}
+/*imagen del producto descripcion y boton*/
+
+#imagenProducto img{
+    height: 180px;
+    width: 350px;
+    border: solid 0.5px;
+    margin: 2px;
+    border-radius: 2px;
+    float: left;
+}
+
+#Boton{
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    height: 100px;
+    border: solid 0.5px #b48888;
+    float: right;
+}
+
+#Boton button{
+height: 100px;
+width: 200px;
+font-size: 18px;
+}
+
+#detalles{
+    margin-left: 40px;
+    width: 20%;
+    height: 95%;
+    float: left;
+   
+}
+
+#detalles li{
+    list-style: none;
+    font-size: 23px;
+    text-align: justify;
+}
+
+/* ventana flotante */
+
+.flotante{
+
+    background-color: #4e4b4b;
+    color: #e6dddd;
+    width: 38%;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    position: fixed;
+    left: 29%;
+    top: 32%;
+    height: 20%;
+    display: none;
+    padding: 50px;
+
+    
+}
+
+#contenedor-gris{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0,0, 0.6)
+}
+
+#cerrar img{
+    position: absolute;
+    right: 1px;
+    height: 30px;
+    width: 30px;
+    top: -5px;
+
+}
+
+/*estilos de ventana flotante*/
+
+
+.txt{
+width: 500px;
+height: 40px;
+text-align: center;
+border-radius: 5px;
+
+}
+
+#cerrar button{
+    background-color: #2354b68c;
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    color: blanchedalmond
+
+}
+
+
+
+
+
+
+
+
+
+/* barra de opciones*/
+#nav1{
+    height: 4%;
+  /*  background: #990b0b; */
+}
+
+
+.navegacion{
+	width: 100%;
+	margin: 5px auto;
+    background: #e6dddd;
+    border-radius: 10px;
+    border:black 0.5px solid;
+}
+
+
+.navegacion ul{
+    list-style: none;
+    border-radius: 5px;
+}
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: #353535;
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	color: #CE7D35;
+	transition: all .3s;
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #333333;
+	width: 120%;
+	visibility: hidden;
+	opacity: 0;
+        transition: opacity 1.5s;
+        border-radius: 3px;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
