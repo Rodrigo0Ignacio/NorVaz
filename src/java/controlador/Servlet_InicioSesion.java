@@ -1,6 +1,5 @@
 
 package controlador;
-
 import Entidad.Usuario;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -50,29 +49,7 @@ public class Servlet_InicioSesion extends HttpServlet {
 
         if (botonRegistrar != null) {
 
-            if (nombre == null) {
-                listaErrores.add("El nombre es oblogatorio");
-            }
-            if (apellidos == null) {
-                listaErrores.add("El apellido es oblogatorio");
-            }
-            if (email == null) {
-                listaErrores.add("El email es oblogatorio");
-            }
-            if (rut == null) {
-                listaErrores.add("El rut es oblogatorio");
-            }
-            if (telefono == null) {
-                listaErrores.add("El telefono es oblogatorio");
-            }
-            if (contrasena == null) {
-                listaErrores.add("la contraseña es oblogatoria");
-            }
-            if (!contrasena.equalsIgnoreCase(contrasena2)) {
-                listaErrores.add("la contraseña no coincide");
-
-                response.sendRedirect("InicioSesion.jsp");
-            }
+            
             if (listaErrores.isEmpty()) {
 
                 usuario1.setNombre(nombre);
@@ -85,15 +62,19 @@ public class Servlet_InicioSesion extends HttpServlet {
                 advertencia = valida.RegistrarUsuario(usuario1);
                 response.sendRedirect("InicioSesion.jsp?validador=" + advertencia);
             }
-        } else {
-            if (botonIngresar != null) {
+        }
+        
+        if (botonIngresar != null) {
 
-                if (usuario == null) {
-                    listaErrores.add("ingrese su email");
+                if (usuario == null || contrasenau == null ) {
+                    listaErrores.add("La contraseña o el usuario son incorrectos");
+                    
+                    request.setAttribute("listaErrores", listaErrores);
+                    request.getRequestDispatcher("InicioSesion.jsp").forward(request, response);
+                    
                 }
-                if (contrasenau == null) {
-                    listaErrores.add("ingrese su contraseña");
-                }
+               
+                
                 if (listaErrores.isEmpty()) {
 
                     usuario1.setEmail(usuario);
@@ -124,13 +105,12 @@ public class Servlet_InicioSesion extends HttpServlet {
 
                         default:
                             listaErrores.add("Usuario no encontrado");
-                            response.sendRedirect("InicioSesion.jsp");
+                           
 
                     }
                     
-                }  
+                }
             }
-        }
       
 
         

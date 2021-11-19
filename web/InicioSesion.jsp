@@ -16,9 +16,11 @@ String estiloU = null;
 String estiloA = null;
 String sesionIniciada = null;
 String sinSesion = null;
-
+String verificar =  (String) request.getAttribute("validador");
 Crud_Producto product = new Crud_Producto();
 ArrayList<Producto> cProductos = product.ListarCategoria();
+/*CAPTURA POSIBLES ERRORES DE CREDENCIALES*/
+ArrayList listaErrores = (ArrayList) request.getAttribute("listaErrores");
 
 if(sesion.getAttribute("rol") != null && sesion.getAttribute("usuario") != null ){
     rol = sesion.getAttribute("rol").toString();
@@ -48,6 +50,9 @@ switch (rol){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
+        
         <title>NorVaz - Sesion</title>
     </head>
     <body>
@@ -126,7 +131,7 @@ switch (rol){
         <div id="contenido">
             <div class="InisiarSesion">
                 <h2>Iniciar Sesion</h2>
-                <form action="Servlet_InicioSesion" method="post">
+                <form name="login" action="Servlet_InicioSesion" method="post" onsubmit="return validarLogin()">
                 <table>
                        <tr><br><td><br></td><td></td></tr>
                        <tr><td>Usuario* </td><td><input type="text" value="" name="txt_verificarUsuario" placeholder="ejemplo: roberto.farias@dominio.cl"></td></tr>
@@ -142,23 +147,25 @@ switch (rol){
             </div>
                 <div class="Registrarse">
                     <h2> Registrarse </h2>
-                    <form method="post" action="Servlet_InicioSesion" >
+                    <form name="registro" method="post" action="Servlet_InicioSesion" onsubmit="return validarDatos()" >
                     <table>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Nombre* </td><td><input type="text" value="" name="txt_regisNombre"></td></tr>
+                           <tr><td>Nombre* </td><td><input type="text" name="txt_regisNombre" onkeypress="return soloLetras(event)"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Apellidos* </td><td><input type="text" value="" name="txt_regisApellido"></td></tr>
+                           <tr><td>Apellidos* </td><td><input type="text" value="" name="txt_regisApellido" onkeypress="return soloLetras(event)"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Email* </td><td><input type="email" value="" name="txt_regisEmail" placeholder="ejemplo: roberto.farias@dominio.cl"></td></tr>
+                           <tr><td>Email* </td><td><input type="email" value="" name="txt_regisEmail" placeholder="ejemplo: roberto.farias@dominio.cl" onclick=" return validarEmail(document.getElementById('correo').value)"></td></tr>
                            <tr><td><br></td><td></td></tr>
                            <tr><td>Rut* </td><td><input type="text" value="" name="txt_regisRut" placeholder="ejemplo: 12.111.222-4"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Telefono* </td><td><input type="tel" value="" name="txt_regisTelefono" placeholder="ejemplo: 98745632"></td></tr>
+                           <tr><td>Telefono* </td><td><input type="tel" value="" name="txt_regisTelefono" placeholder="ejemplo: 98745632" onkeypress=" return soloNumeros(event)"  ></td></tr>
                            <tr><td><br></td><td></td></tr>
                            <tr><td>Contraseña* </td><td><input type="password" value="" name="txt_regisContrasena"></td></tr>
                            <tr><td><br></td><td></td></tr>
                            <tr><td>Confirma contraseña* </td><td><input type="password" value="" name="txt_regisConfirmaContrasena"></td></tr>
+                                 
                            <tr><td><br></td><td></td></tr>
+                           
                            
                            <tr><td></td><td> <input type="submit" name="btn_Registrar" value="Registrarse"></td></tr>
         
@@ -192,4 +199,10 @@ switch (rol){
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <!--VALIDA FORMULARIO-->
+    <script src="js/Metodos.js" type="text/javascript"></script>
+    
+
+   
 </html>

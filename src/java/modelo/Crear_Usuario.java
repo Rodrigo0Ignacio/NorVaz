@@ -25,7 +25,7 @@ public class Crear_Usuario extends Conexion{
             super.resultado = st.executeUpdate(query);
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"error registraUsuario");
+            return 0;
         }
         try {
             st.close();
