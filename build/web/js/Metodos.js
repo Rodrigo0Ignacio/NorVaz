@@ -6,11 +6,6 @@
             rut = document.registro.txt_regisRut.value;
             telefono = document.registro.txt_regisTelefono.value;
             
-            if(!document.registro.txt_regisContrasena.value == document.registro.txt_regisConfirmaContrasena.value){
-                 alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
-                 return false;
-            }
-            
             if(nombre.length == 0){
                 alertify.alert("Error","El campo Nombre es requerido").set('label','ok');
                 return false;
@@ -30,6 +25,13 @@
             if(telefono.length == 0){
                 alertify.alert("Error","El campo telefono es requerido").set('label','ok');
                 return false;
+            }
+            
+             if(document.registro.txt_regisContrasena.value == document.registro.txt_regisConfirmaContrasena.value){
+                 return true;
+            } else{
+                alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
+                 return false;
             }
               
         }
