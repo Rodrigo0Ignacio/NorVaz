@@ -134,6 +134,44 @@
                 return true;
             }       
         }
+        function validarFormulario(){
+            var nombre = document.modificar_datos.txt_camNombre.value;
+            var apellido = document.modificar_datos.txt_camApellido.value;
+            var email1 = document.modificar_datos.txt_camEmail1.value;
+            var email2 = document.modificar_datos.txt_camEmail2.value;
+            var telefono = document.modificar_datos.txt_camTelefono.value;
+            
+            if((nombre.length == 0 || nombre == "" || nombre == "null")){
+               alertify.alert("Error","Nombre: no puede dejar datos en blanco").set('label','ok');
+                return false;
+                
+            }
+            if((apellido.length == 0 || apellido == "" || apellido == "null")){
+               alertify.alert("Error","Apellidos: no puede dejar datos en blanco").set('label','ok');
+                return false;
+                
+            }
+            if((email1.length == 0 || email1 == "" || email1 == "null")){
+               alertify.alert("Error","Email: no puede dejar datos en blanco").set('label','ok');
+                return false;
+                
+            }
+            if((email2.length == 0 || email2 == "" || email2 == "null")){
+               alertify.alert("Error","confirme Email: no puede dejar datos en blanco").set('label','ok');
+                return false;
+                
+            }
+            if((telefono.length == 0 || telefono == "" || telefono == "null")){
+               alertify.alert("Error","Telefono: no puede dejar datos en blanco").set('label','ok');
+                return false;
+                
+            }
+            if(email1 != email2){
+                 alertify.alert("Error","El Email no coincide").set('label','ok');
+                return false;   
+            }
+
+        }
         
         
         function validarEmail(correo){

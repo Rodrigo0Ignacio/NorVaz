@@ -177,7 +177,7 @@ switch (rol){
             </div>
                 <div class="Registrarse">
                     <h2> Modificar Datos </h2>
-                    <form name="modificar_datos" method="post" action="servlet_usuario_Editar" >
+                    <form name="modificar_datos" method="post" action="servlet_usuario_Editar" onsubmit="return validarFormulario()" >
                     <table>
 
                         <tr><br><td><br></td><td></td></tr>
