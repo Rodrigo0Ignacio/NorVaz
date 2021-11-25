@@ -90,6 +90,52 @@
             
         }
         
+        function ValidarCoincidenciaPass(){
+            pass1 = document.cambio_password.txt_password1.value;
+            pass2 = document.cambio_password.txt_password2.value;
+            
+             if((pass2.length == 0 || pass1.length == 0) || pass1 != pass2 ){
+                 alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
+                return false;
+            }
+           
+            
+        }
+        
+        function validarSalida(){
+            var direccion = document.getElementById('region');
+            
+            var comuna = document.getElementById('comuna');
+            var calle = document.getElementById('calle');
+            var nroCalle = document.getElementById('nroCalle');
+            var nroCasa = document.getElementById('nroCasa');
+            
+            if(direccion.value == 0 || direccion.value == ""){
+                
+                alertify.alert("Error","Region: Ingrese una opcion valida").set('label','ok');
+                direccion.focus();
+                return false;
+                
+            }else{
+                direccion.focus();
+                return true;
+            }
+        }
+        
+        function validaDatosDireccion(){
+
+            if(comuna.value == 0 || comuna.value == ""){
+                
+                alertify.alert("Error","Error comuna").set('label','ok');
+                return false;
+                
+            }else{
+                direccion.focus();
+                return true;
+            }       
+        }
+        
+        
         function validarEmail(correo){
             var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
             var esvalido = expReg.test(correo);
@@ -98,6 +144,8 @@
                 return false;
             }
         }
+        
+        
 
         
         

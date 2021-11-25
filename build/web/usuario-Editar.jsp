@@ -64,6 +64,8 @@ switch (rol){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <title>NorVaz - Editar Perfil</title>
     </head>
     <body>
@@ -141,7 +143,7 @@ switch (rol){
         <div id="contenido">
             <div class="InisiarSesion">
                 <h2>Cambiar Contraseña</h2>
-                <form action="servlet_usuario_Editar" method="post"> 
+                <form name="cambio_password" action="servlet_usuario_Editar" method="post" onsubmit="return ValidarCoincidenciaPass()"> 
                     
                 <table>
                        <tr><br><td><br></td><td></td></tr>
@@ -175,20 +177,20 @@ switch (rol){
             </div>
                 <div class="Registrarse">
                     <h2> Modificar Datos </h2>
-                    <form method="post" action="servlet_usuario_Editar" >
+                    <form name="modificar_datos" method="post" action="servlet_usuario_Editar" >
                     <table>
 
                         <tr><br><td><br></td><td></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Nombre* </td><td><input type="text" value="<%=user.getNombre()%>" name="txt_camNombre"></td></tr>
+                           <tr><td>Nombre* </td><td><input type="text" value="<%=user.getNombre()%>" name="txt_camNombre" onkeypress="return soloLetras(event)"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Apellidos* </td><td><input type="text" value="<%=user.getApellidos()%>" name="txt_camApellido"></td></tr>
+                           <tr><td>Apellidos* </td><td><input type="text" value="<%=user.getApellidos()%>" name="txt_camApellido" onkeypress="return soloLetras(event)"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Email* </td><td><input type="email" value="<%=user.getEmail()%>" name="txt_camEmail1" placeholder="ejemplo: roberto.farias@dominio.cl"></td></tr>
+                           <tr><td>Email* </td><td><input type="email" value="<%=user.getEmail()%>" name="txt_camEmail1" placeholder="ejemplo: roberto.farias@dominio.cl" ></td></tr>
                            <tr><td><br></td><td></td></tr>
                            <tr><td>Confirmar Email* </td><td><input type="email" value="<%=user.getEmail()%>" name="txt_camEmail2" placeholder="ejemplo: roberto.farias@dominio.cl"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Telefono* </td><td><input type="tel" value="<%=user.getTelefono()%>" name="txt_camTelefono" placeholder="ejemplo: 98745632"></td></tr>
+                           <tr><td>Telefono* </td><td><input type="tel" value="<%=user.getTelefono()%>" name="txt_camTelefono" placeholder="ejemplo: 98745632" onkeypress="return soloNumeros(event)" ></td></tr>
                            <tr><td><br></td><td></td></tr>
                            <tr><td></td><td><input type="hidden" value="<%=rut%>" name="rut"></td></tr>
                            <tr><td><br></td><td></td></tr>
@@ -222,4 +224,7 @@ switch (rol){
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <script src="js/Metodos.js" type="text/javascript"></script>
+    
 </html>

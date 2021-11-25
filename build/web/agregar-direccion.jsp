@@ -68,6 +68,8 @@ switch (rol){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/editar-direccion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <title>NorVaz - Agregar Direccion</title>
     </head>
     <body>
@@ -144,37 +146,39 @@ switch (rol){
             </div>
         <div id="contenido">
             <div class="InisiarSesion">
-                <form action="Servlet_EditarDireccion" method="post">   
+                <!--AL PRECIONAR EL BOTON LA PAGINA NO ENCUESTRA EL SERVBLET-->
+                <form name="agregarDireccion" action="/Servlet_EditarDireccion" method="post"  onsubmit=" return validarSalida()">   
                     <h3>Ingresar direccion</h3>
                     <table>
                         <tr><td></td><td></td></tr>
-                        <tr><td>Region</td><td><select name="region">
-                                    <option>Seleccione una region </option>
-                                    <option>Arica y Parinacota.</option>
-                                    <option>Tarapacá</option>
-                                    <option>Antofagasta</option>
-                                    <option>Atacama</option>
-                                    <option>Coquimbo</option>
-                                    <option>Valparaíso</option>
-                                    <option>Metropolitana de Santiago</option>
-                                    <option>General Bernardo O’Higgins</option>
-                                    <option>Maule</option>
-                                    <option>Ñuble</option>
-                                    <option>Biobío</option>
-                                    <option>La Araucanía</option>
-                                    <option>Los Ríos</option>
-                                    <option>Los Lagos</option>
-                                    <option>Aysén </option>
-                                    <option>Magallanes</option>
-                                </select></td></tr>
+                        <tr><td>Region</td><td><select name="region" id="region" required>
+                                    <option value="0" disabled selected >Seleccione una region </option>
+                                    <option value="1">Arica y Parinacota.</option>
+                                    <option value="2">Tarapacá</option>
+                                    <option value="3">Antofagasta</option>
+                                    <option value="4">Atacama</option>
+                                    <option value="5">Coquimbo</option>
+                                    <option value="6">Valparaíso</option>
+                                    <option value="7">Metropolitana de Santiago</option>
+                                    <option value="8">General Bernardo O’Higgins</option>
+                                    <option value="9">Maule</option>
+                                    <option value="10">Ñuble</option>
+                                    <option value="11">Biobío</option>
+                                    <option value="12">La Araucanía</option>
+                                    <option value="13">Los Ríos</option>
+                                    <option value="14">Los Lagos</option>
+                                    <option value="15">Aysén </option>
+                                    <option value="16">Magallanes</option>
+                                </select>
+                            </td></tr>
                         <tr><td><br/></td><td></td></tr>
-                        <tr><td>Comuna* </td><td><input type="text" value="" name="txt_comuna"></td></tr>
+                        <tr><td>Comuna* </td><td><input type="text" value="" name="txt_comuna" onkeypress="return soloLetras(event)" ></td></tr>
                         <tr><td><br/></td> <td></td></tr>
-                        <tr><td>Calle</td> <td><input type="text" name="calle"></td></tr>
+                        <tr><td>Calle</td> <td><input type="text" name="calle" onkeypress="return soloLetras(event)"></td></tr>
                         <tr><td><br/></td><td></td></tr>
-                        <tr><td>Nro Calle</td> <td><input type="number" name="nrocalle"></td></tr>
+                        <tr><td>Nro Calle</td> <td><input type="text" name="nrocalle" onkeypress="return soloNumeros()(event)"></td></tr>
                         <tr><td><br/></td><td></td></tr>
-                        <tr><td>Nro Casa</td> <td><input type="number" name="nrocasa"></td></tr> 
+                        <tr><td>Nro Casa</td> <td><input type="text" name="nrocasa" onkeypress="return soloNumeros()(event)" ></td></tr> 
                         <tr><td><br/></td><td></td></tr>
                         <tr><td></td> <td><input type="submit" name="agregar" value="Agregar"></td></tr>
                         <tr><td><br/></td> <td></td></tr>
@@ -208,4 +212,8 @@ switch (rol){
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <!--VALIDA FORMULARIO-->
+    <script src="js/Metodos.js" type="text/javascript"></script>
+    
 </html>
