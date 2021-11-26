@@ -215,4 +215,5 @@ switch (rol){
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
+    <!--SE UNE UNA RAMA NUEVA-->
 </html>
