@@ -66,6 +66,7 @@ switch (rol){
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
         <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
         <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="img/martillo.png">
         <title>NorVaz - Editar Perfil</title>
     </head>
     <body>

@@ -48,6 +48,7 @@
         <title>NorVaz - Servicios</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="shortcut icon" href="img/martillo.png">
     </head>
     <!--VENTANA FLOTANTE-->
     

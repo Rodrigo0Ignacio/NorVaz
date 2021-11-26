@@ -58,6 +58,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/carrito-estilos.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="img/martillo.png">
         <title>NorVaz</title>
         <script src="js/jquery-3.5.1.min.js"></script>
     </head>
