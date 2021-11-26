@@ -1,10 +1,11 @@
 
-        function validarDatos(){
-            nombre = document.registro.txt_regisNombre.value;
-            apellidos = document.registro.txt_regisApellido.value;
-            email = document.registro.txt_regisEmail.value;
-            rut = document.registro.txt_regisRut.value;
-            telefono = document.registro.txt_regisTelefono.value;
+
+function validarDatos(){
+            var nombre = document.registro.txt_regisNombre.value;
+            var apellidos = document.registro.txt_regisApellido.value;
+            var email = document.registro.txt_regisEmail.value;
+            var rut = document.registro.txt_regisRut.value;
+            var telefono = document.registro.txt_regisTelefono.value;
             
             if(nombre.length == 0){
                 alertify.alert("Error","El campo Nombre es requerido").set('label','ok');
@@ -37,11 +38,11 @@
         }
         
         function soloLetras(e){
-            tecla = e.keyCode || e.which;
-            teclado = String.fromCharCode(tecla).toString();
-            letras = "QWERTYUIOPASDFGHJKLÑZXCVBNMqwertyuiopasdfghjklñzxcvbnmáéíóúÁÉÍÓÚ";
-            especiales = [8,13];
-            tecla_especial = false;
+            var tecla = e.keyCode || e.which;
+            var teclado = String.fromCharCode(tecla).toString();
+            var letras = "QWERTYUIOPASDFGHJKLÑZXCVBNMqwertyuiopasdfghjklñzxcvbnmáéíóúÁÉÍÓÚ ";
+            var especiales = [8,13];
+            var tecla_especial = false;
             
             for(var i in especiales){
                 if(tecla == especiales[i]){
@@ -58,11 +59,11 @@
         }
         
         function soloNumeros(e){
-            tecla = e.keyCode || e.which;
-            teclado = String.fromCharCode(tecla).toString();
-            letras = "0123456789";
-            especiales = [8,13];
-            tecla_especial = false;
+            var tecla = e.keyCode || e.which;
+            var teclado = String.fromCharCode(tecla).toString();
+            var letras = "0123456789";
+            var especiales = [8,13];
+            var tecla_especial = false;
             
             for(var i in especiales){
                 if(tecla == especiales[i]){
@@ -79,8 +80,8 @@
         }
         
         function validarLogin(){
-            usuario = document.login.txt_verificarUsuario.value;
-            password = document.login.txt_verificarPassword.value;
+            var usuario = document.login.txt_verificarUsuario.value;
+            var password = document.login.txt_verificarPassword.value;
             
              if(usuario.length == 0 || password.length == 0 ){
                  alertify.alert("Error","Ingrese el usuario y contraseña").set('label','ok');
@@ -91,8 +92,8 @@
         }
         
         function ValidarCoincidenciaPass(){
-            pass1 = document.cambio_password.txt_password1.value;
-            pass2 = document.cambio_password.txt_password2.value;
+            var pass1 = document.cambio_password.txt_password1.value;
+            var pass2 = document.cambio_password.txt_password2.value;
             
              if((pass2.length == 0 || pass1.length == 0) || pass1 != pass2 ){
                  alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
@@ -105,10 +106,10 @@
         function validarSalida(){
             var direccion = document.getElementById('region');
             
-            var comuna = document.getElementById('comuna');
-            var calle = document.getElementById('calle');
-            var nroCalle = document.getElementById('nroCalle');
-            var nroCasa = document.getElementById('nroCasa');
+            var comuna = document.agregarDireccion.txt_comuna.value;
+            var calle = document.agregarDireccion.calle.value;
+            var nroCalle = document.agregarDireccion.nrocalle.value;
+            var nroCasa = document.agregarDireccion.nrocasa.value;
             
             if(direccion.value == 0 || direccion.value == ""){
                 
@@ -116,9 +117,22 @@
                 direccion.focus();
                 return false;
                 
-            }else{
+            }if(comuna.length == 0 || comuna == "" || comuna == null){
+                alertify.alert("Error","falta rellenar algun item").set('label','ok');
                 direccion.focus();
-                return true;
+                return false;
+            }if(calle.length == 0 || calle == "" || calle == null){
+                alertify.alert("Error","falta rellenar algun item").set('label','ok');
+                direccion.focus();
+                return false;
+            }if(nroCalle.length == 0 || nroCalle == "" || nroCalle == null){
+                alertify.alert("Error","falta rellenar algun item").set('label','ok');
+                direccion.focus();
+                return false;
+            }if(nroCasa.length == 0 || nroCasa == "" || nroCasa == null){
+                alertify.alert("Error","falta rellenar algun item").set('label','ok');
+                direccion.focus();
+                return false;
             }
         }
         
@@ -182,6 +196,80 @@
                 return false;
             }
         }
+        
+        function validaServicio(){
+            var pobla = document.solitar_Servicio.txt_poblacion_villa.value;
+            var calle = document.solitar_Servicio.txt_calle2.value;
+            var nroCasa = document.solitar_Servicio.txt_NCasa.value;
+            var telefono = document.solitar_Servicio.txt_telefono.value;
+            var requerimiento = document.solitar_Servicio.textA_requerimiento.value;
+            
+            if(pobla == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(calle == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(nroCasa == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(telefono == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(requerimiento == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }             
+            
+        }
+        
+          function compruebaAdmin(){
+            var rut = document.registra_admin.txt_rut.value;
+            var nombre = document.registra_admin.txt_nombre.value;
+            var apellido = document.registra_admin.txt_apellido.value;
+            var emial = document.registra_admin.txt_email.value;
+            var telefono = document.registra_admin.txt_telefono.value;
+            var pass1 = document.registra_admin.txt_contrasena1.value;
+            var pass2 = document.registra_admin.txt_contrasena2.value;
+            
+            if(rut == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(nombre == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(apellido == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(emial == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(telefono == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(pass1 == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(pass2 == ""){
+                 alertify.alert("Error","Complete todo los items").set('label','ok');
+                return false;
+            }if(pass1 != pass2){
+                alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
+                return false;
+            }
+        }
+        function buscarRut(){
+            var rut = document.buscar_rut.txt_rut.value;
+            
+            if(rut == ""){
+                alertify.alert("Error","Ingrese el rut").set('label','ok');
+                return false;
+            }else{
+                return true;
+            }
+            
+        }
+
         
         
 

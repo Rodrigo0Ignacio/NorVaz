@@ -92,6 +92,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         
         <title>NorVaz - Ingresar un servicio</title>
     </head>
@@ -171,7 +173,7 @@
             <div id="contenido">
                 <div class="InisiarSesion">
                     <h2>Ingresar un Servicio</h2>
-                    <form action="servlet_servicio" method="get">
+                    <form name="solitar_Servicio" action="servlet_servicio" method="get" onsubmit=" return validaServicio()">
                         <table>
                                 <tr><td><br></td><td></td></tr>
                                 <tr><td><br><h3>Servicio</h3></td><td>
@@ -186,15 +188,15 @@
                                     </td></tr>
 
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Poblacion o villa* </td><td><input type="text" value="" name="txt_poblacion_villa" placeholder="ejmplo: San Antonio, cerro arenas,"></td></tr>
+                                <tr><td>Poblacion o villa* </td><td><input type="text" value="" name="txt_poblacion_villa" placeholder="ejmplo: San Antonio, cerro arenas"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Calle* </td><td><input type="text" name="txt_calle" placeholder="ejmplo: Manuel Blanco Encalada"></td></tr>
+                                <tr><td>Calle* </td><td><input type="text" name="txt_calle2" value="" placeholder="ejmplo: Manuel Blanco Encalada"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Numero de casa o departamento* </td><td><input type="text" name="txt_NCasa" placeholder=""></td></tr>
+                                <tr><td>Numero de casa o departamento* </td><td><input type="text" name="txt_NCasa" placeholder="" onkeypress=" return soloNumeros(event)"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Telefono* </td><td><input type="tel"  name="txt_telefono" placeholder="ejemplo: 98745632"></td></tr>
+                                <tr><td>Telefono* </td><td><input type="tel"  name="txt_telefono" placeholder="ejemplo: 98745632" onkeypress=" return soloNumeros(event)"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Ingrese una descripcion de su problema* </td><td><textarea name="textA_requerimiento" cols="35" rows="6" placeholder="Ingrese su requerimiento, de forma detallada."></textarea>
+                                <tr><td>Ingrese una descripcion de su problema* </td><td><textarea name="textA_requerimiento" cols="18" rows="6" placeholder="Ingrese su requerimiento, de forma detallada."></textarea>
                                         </textarea></td></tr>
                                 <tr><td><br></td><td></td></tr>
                                 <tr><td></td><td><input type="hidden" value="<%=rut%>" name="rut"></td></tr>
@@ -234,4 +236,7 @@
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <!--VALIDA FORMULARIO-->
+    <script src="js/Metodos.js" type="text/javascript"></script>
 </html>

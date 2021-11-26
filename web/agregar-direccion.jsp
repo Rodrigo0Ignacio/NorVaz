@@ -176,9 +176,9 @@ switch (rol){
                         <tr><td><br/></td> <td></td></tr>
                         <tr><td>Calle</td> <td><input type="text" name="calle" onkeypress="return soloLetras(event)"></td></tr>
                         <tr><td><br/></td><td></td></tr>
-                        <tr><td>Nro Calle</td> <td><input type="text" name="nrocalle" onkeypress="return soloNumeros()(event)"></td></tr>
+                        <tr><td>Nro Calle</td> <td><input type="text" name="nrocalle" onkeypress="return soloNumeros(event)"></td></tr>
                         <tr><td><br/></td><td></td></tr>
-                        <tr><td>Nro Casa</td> <td><input type="text" name="nrocasa" onkeypress="return soloNumeros()(event)" ></td></tr> 
+                        <tr><td>Nro Casa</td> <td><input type="text" name="nrocasa" onkeypress="return soloNumeros(event)" ></td></tr> 
                         <tr><td><br/></td><td></td></tr>
                         <tr><td></td> <td><input type="submit" name="agregar" value="Agregar"></td></tr>
                         <tr><td><br/></td> <td></td></tr>

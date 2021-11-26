@@ -47,6 +47,8 @@ switch (rol){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <title>NorVaz - Registrarse</title>
     </head>
     <body>
@@ -127,19 +129,19 @@ switch (rol){
                          <h2> Registrar un administrador </h2>
                          <br>
                          <br>
-                         <form method="post" action="servlet_AgregarAdministrador" >
+                         <form name="registra_admin" method="post" action="servlet_AgregarAdministrador" onsubmit="return compruebaAdmin()">
                              <table>
                                  <tr>
                                  <tr><td><br></td><td></td></tr>
                                  <tr><td>RUT* </td><td><input type="text" value="" name="txt_rut"></td></tr>
                                  <tr><td><br></td><td></td></tr>
-                                 <tr><td>Nombre* </td><td><input type="text" value="" name="txt_nombre"></td></tr>
+                                 <tr><td>Nombre* </td><td><input type="text" value="" name="txt_nombre" onkeypress="return soloLetras(event)"></td></tr>
                                  <tr><td><br></td><td></td></tr>
-                                 <tr><td>Apellidos* </td><td><input type="text" value="" name="txt_apellido"></td></tr>
+                                 <tr><td>Apellidos* </td><td><input type="text" value="" name="txt_apellido" onkeypress="return soloLetras(event)"></td></tr>
                                  <tr><td><br></td><td></td></tr>
                                  <tr><td>Email* </td><td><input type="email" value="" name="txt_email" placeholder="ejemplo: roberto.farias@dominio.cl"></td></tr>
                                  <tr><td><br></td><td></td></tr>
-                                 <tr><td>Telefono* </td><td><input type="tel" value="" name="txt_telefono" placeholder="ejemplo: 98745632"></td></tr>
+                                 <tr><td>Telefono* </td><td><input type="tel" value="" name="txt_telefono" placeholder="ejemplo: 98745632" onkeypress="return soloNumeros(event)"></td></tr>
                                  <tr><td><br></td><td></td></tr>
                                  <tr><td>Contraseña* </td><td><input type="password" value="" name="txt_contrasena1"></td></tr>
                                  <tr><td><br></td><td></td></tr>
@@ -178,4 +180,7 @@ switch (rol){
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <!--VALIDA FORMULARIO-->
+    <script src="js/Metodos.js" type="text/javascript"></script>
 </html>

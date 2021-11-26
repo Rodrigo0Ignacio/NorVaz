@@ -140,7 +140,7 @@ body{
     padding-top:50px;
     width:100%;
     min-width:654px;
-  display:flex;
+    display:flex;
 }
 
 #contenido h2{
@@ -166,6 +166,7 @@ body{
 width: 41%;
 padding: 50px;
 }
+
 
 .Registrarse{
 

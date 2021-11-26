@@ -56,6 +56,8 @@ switch (rol){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <title>NorVaz - Editar una Cuenta</title>
     </head>
     <body>
@@ -134,7 +136,7 @@ switch (rol){
                     <div class="InisiarSesion" <%=formBuscarCUenta%> >
                          <h2> Buscar Cuenta </h2>
                          <br>
-                         <form method="post" action="servlet_EditarAdministrador" >
+                         <form name="buscar_rut" method="post" action="servlet_EditarAdministrador" onsubmit="return buscarRut()" >
                              <table>
                                  <tr>
                                  <tr><td><br></td><td></td></tr>
@@ -210,4 +212,7 @@ switch (rol){
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <!--VALIDA FORMULARIO-->
+    <script src="js/Metodos.js" type="text/javascript"></script>
 </html>
