@@ -47,6 +47,7 @@ switch (rol){
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="img/martillo.png">
         <title>NorVaz - Contactanos</title>
     </head>
     <body>
