@@ -142,16 +142,6 @@ public class Servlet_EditarProductos extends HttpServlet {
             }
 
         }
-
-
-        
-        
-        
-        
-        
-        
-        
-        
         
         
     }

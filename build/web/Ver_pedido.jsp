@@ -144,7 +144,7 @@
 
                 <div id="productos">
                     <h1>Numero de venta:<%=v.getId_venta()%></h1>
-                    <h1> Total :<%=v.getTotal()%></h1>
+                    <h1>Total :<%=v.getTotal()%></h1>
                     <h1>Fecha :<%=v.getFecha()%></h1>
                     <h1>Estado :<%=v.getEstado()%></h1>
                     <%ArrayList<Producto> detalle=product.buscarPedidoProducto(v.getId_venta());

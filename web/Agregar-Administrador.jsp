@@ -130,7 +130,7 @@ switch (rol){
                          <h2> Registrar un administrador </h2>
                          <br>
                          <br>
-                         <form name="registra_admin" method="post" action="servlet_AgregarAdministrador" onsubmit="return compruebaAdmin()">
+                         <form name="registra_admin" method="post" action="servlet_AgregarAdministrador" onsubmit="return registarAdmin()">
                              <table>
                                  <tr>
                                  <tr><td><br></td><td></td></tr>

@@ -51,8 +51,10 @@ switch (rol){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="img/martillo.png">
-        <title>NorVaz - Sesion</title>
+        <title>NorVaz - Ingreso de productos</title>
     </head>
     <body>
         
@@ -131,40 +133,40 @@ switch (rol){
 
             <div class="InisiarSesion">
                 <h2> Ingresar Producto </h2>
-                <form method="post" action="servlet_AgregarProducto" >
+                <form name="ingreso_producto" method="post" action="servlet_AgregarProducto" onsubmit="return agregarProducto()" >
                     <table>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Codigo de producto* </td><td><input type="text" name="txt_code"></td></tr>
+                        <tr><td>Codigo de producto* </td><td><input type="text" name="txt_code" onkeypress="return soloNumeros(event)"></td></tr>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Nombre* </td><td><input type="text" value="" name="txt_nombre"></td></tr>
+                        <tr><td>Nombre* </td><td><input type="text" value="" name="txt_nombre" onkeypress="return soloLetras(event)"></td></tr>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Stock* </td><td><input type="number" value="" name="txt_stock"></td></tr>
+                        <tr><td>Stock* </td><td><input type="number" value="" name="txt_stock" onkeypress="return soloNumeros(event)"></td></tr>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Precio (IVA incluido)* </td><td><input type="number" value="" name="txt_precio" placeholder="ingrese valores sin punto"></td></tr>
+                        <tr><td>Precio (IVA incluido)* </td><td><input type="text" value="" name="txt_precio" placeholder="ingrese valores sin punto" onkeypress="return soloNumeros(event)"></td></tr>
                         <tr><td><br></td><td></td></tr>
                         <tr><td>Peso en Kilogramos* </td><td><input type="text" value="" name="txt_peso" placeholder="1,3K o 3K"></td></tr>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Categoria* </td><td><select name="categoria">
-                                    <option>Seleccione una categoria</option>
-                                    <option>Sofás</option>
-                                    <option>Mesas</option>
-                                    <option>Sillas</option>
-                                    <option>Camas</option>
-                                    <option>Escritorios</option>
-                                    <option>Cómodas</option>
-                                    <option>Mesas de comedor</option>
-                                    <option>Sofás seccionales</option>
-                                    <option>Muebles de televisor</option>
-                                    <option>Bibliotecas</option>
-                                    <option>Mesitas de café</option>
-                                    <option>Beladores</option>
-                                    <option>Mini bar</option>
-                                    <option>Islas para cocina</option>
-                                    <option>Armarios</option>
-                                    <option>Organizadores de juguetes</option>
-                                    <option>Percheros de pared</option>
-                                    <option>Muebles para jardín</option>
-                                    <option>Otros</option>
+                        <tr><td>Categoria* </td><td><select name="categoria" id="categoria" required>
+                                    <option value="0" disabled selected>Seleccione una categoria</option>
+                                    <option value="1">Sofás</option>
+                                    <option value="2">Mesas</option>
+                                    <option value="3">Sillas</option>
+                                    <option value="4">Camas</option>
+                                    <option value="5">Escritorios</option>
+                                    <option value="6">Cómodas</option>
+                                    <option value="7">Mesas de comedor</option>
+                                    <option value="8">Sofás seccionales</option>
+                                    <option value="9">Muebles de televisor</option>
+                                    <option value="10">Bibliotecas</option>
+                                    <option value="11">Mesitas de café</option>
+                                    <option value="12">Beladores</option>
+                                    <option value="13">Mini bar</option>
+                                    <option value="14">Islas para cocina</option>
+                                    <option value="15">Armarios</option>
+                                    <option value="16">Organizadores de juguetes</option>
+                                    <option value="17">Percheros de pared</option>
+                                    <option value="18">Muebles para jardín</option>
+                                    <option value="19">Otros</option>
                                 </select></td></tr>
                         <tr><td><br></td><td></td></tr>
                         <tr><td>Descripcion* </td><td><textarea name="descripcion" rows="4" cols="36" placeholder="Ingrese una breve descripcion"></textarea></td></tr>
@@ -219,4 +221,7 @@ switch (rol){
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <!--VALIDA FORMULARIO-->
+    <script src="js/Metodos.js" type="text/javascript"></script>
 </html>

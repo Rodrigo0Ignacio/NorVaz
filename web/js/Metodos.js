@@ -223,41 +223,6 @@ function validarDatos(){
             
         }
         
-          function compruebaAdmin(){
-            var rut = document.registra_admin.txt_rut.value;
-            var nombre = document.registra_admin.txt_nombre.value;
-            var apellido = document.registra_admin.txt_apellido.value;
-            var emial = document.registra_admin.txt_email.value;
-            var telefono = document.registra_admin.txt_telefono.value;
-            var pass1 = document.registra_admin.txt_contrasena1.value;
-            var pass2 = document.registra_admin.txt_contrasena2.value;
-            
-            if(rut == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(nombre == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(apellido == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(emial == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(telefono == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(pass1 == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(pass2 == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(pass1 != pass2){
-                alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
-                return false;
-            }
-        }
         function buscarRut(){
             var rut = document.buscar_rut.txt_rut.value;
             
@@ -267,6 +232,130 @@ function validarDatos(){
             }else{
                 return true;
             }
+            
+        }
+        function registarAdmin(){
+            var rut = document.registra_admin.txt_rut.value;
+            var nombre = document.registra_admin.txt_nombre.value;
+            var apellidos = document.registra_admin.txt_apellido.value;
+            var emial = document.registra_admin.txt_email.value;
+            var telefono = document.registra_admin.txt_telefono.value;
+            var pass1 = document.registra_admin.txt_contrasena1.value;
+            var pass2 = document.registra_admin.txt_contrasena2.value;
+            
+            if(rut == ""){
+                alertify.alert("Error","EL campo rut esta vacio").set('label','ok');
+                return false;
+            }if(nombre == ""){
+                alertify.alert("Error","EL campo nombre esta vacio").set('label','ok');
+                return false;
+            }if(apellidos == ""){
+                alertify.alert("Error","EL campo apellido esta vacio").set('label','ok');
+                return false;
+            }if(emial == ""){
+                alertify.alert("Error","EL campo email esta vacio").set('label','ok');
+                return false;
+            }if(telefono == ""){
+                alertify.alert("Error","EL campo telefono esta vacio").set('label','ok');
+                return false;
+            }if(pass1 == ""){
+                alertify.alert("Error","EL campo contraseña esta vacio").set('label','ok');
+                return false;
+            }if(pass2 == ""){
+                alertify.alert("Error","EL campo conforme contraseña esta vacio").set('label','ok');
+                return false;
+            }if(pass1 != pass2){
+                alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
+                return false;
+            }
+            
+        }
+        
+        function agregarProducto(){
+            var categoria = document.getElementById('categoria');
+            
+            var codproductos = document.ingreso_producto.txt_code.value;
+            var nombre = document.ingreso_producto.txt_nombre.value;
+            var stock = document.ingreso_producto.txt_stock.value;
+            var preIVA = document.ingreso_producto.txt_precio.value;
+            var pesoKilo = document.ingreso_producto.txt_peso.value;
+            var descripcion = document.ingreso_producto.descripcion.value;
+            var img = document.ingreso_producto.img.value;
+            
+            if(codproductos == ""){
+                alertify.alert("Error","EL campo Codigo producto esta vacio").set('label','ok');
+                return false;
+            }if(nombre == ""){
+                alertify.alert("Error","EL campo Nombre esta vacio").set('label','ok');
+                return false;
+            }if(stock == ""){
+                alertify.alert("Error","EL campo Stock producto esta vacio").set('label','ok');
+                return false;
+            }if(preIVA == ""){
+                alertify.alert("Error","EL campo Precio IVA esta vacio").set('label','ok');
+                return false;
+            }if(pesoKilo == ""){
+                alertify.alert("Error","EL campo peso Kilo esta vacio").set('label','ok');
+                return false;
+            }if(descripcion == ""){
+                alertify.alert("Error","EL campo Descripcion producto esta vacio").set('label','ok');
+                return false;
+            }if(img == ""){
+                alertify.alert("Error","EL campo Ingresa Imagen producto esta vacio").set('label','ok');
+                return false;
+            }if(categoria.value == 0 || categoria.value == ""){
+                alertify.alert("Error","Categoria : seleccione un elemento").set('label','ok');
+                return false;
+            }
+            
+
+        }
+        
+        function buscarProducto(){
+            var idpro = document.editar_producto.txt_code.value;
+            
+            if (idpro == "") {
+               alertify.alert("Error", "Ingrese un codigo de producto").set('label', 'ok');
+               return false;
+            }
+            
+        }
+        
+        function form_editar(){
+            var categoria = document.getElementById('cate');
+            var codProducto = document.editarProducto1.txt_code.value;
+            var nombre = document.editarProducto1.txt_nombre.value;
+            var stock = document.editarProducto1.txt_stock.value;
+            var precioIVA = document.editarProducto1.txt_precio.value;
+            var pkilo = document.editarProducto1.txt_peso.value;
+            var descip = document.editarProducto1.descripcion.value;
+            var img = document.editarProducto1.img.value;
+            
+            if (codProducto == "") {
+               alertify.alert("Error", "EL campo Categoria esta vacio").set('label', 'ok');
+               return false;
+            }if (nombre == "") {
+               alertify.alert("Error", "EL campo nombre esta vacio").set('label', 'ok');
+               return false;
+            }if (stock == "") {
+               alertify.alert("Error", "EL campo stock esta vacio").set('label', 'ok');
+               return false;
+            }if (precioIVA == "") {
+               alertify.alert("Error", "EL campo precio IVA esta vacio").set('label', 'ok');
+               return false;
+            }if (pkilo == "") {
+               alertify.alert("Error", "EL campo peso kilogramo esta vacio").set('label', 'ok');
+               return false;
+            }if (descip == "") {
+               alertify.alert("Error", "EL campo Descripcion esta vacio").set('label', 'ok');
+               return false;
+            }if (categoria.value == 0 || categoria.value == "") {
+               alertify.alert("Error", "Ingrese una categoria").set('label', 'ok');
+               return false;
+            }
+            
+                    
+            
             
         }
 

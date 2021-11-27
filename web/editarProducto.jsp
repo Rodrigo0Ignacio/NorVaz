@@ -58,6 +58,8 @@ ArrayList<Producto> cProductos = product.ListarCategoria();
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/InicioSesion-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="img/martillo.png">
   
         <title>NorVaz - Editar Producto</title>
@@ -138,12 +140,12 @@ ArrayList<Producto> cProductos = product.ListarCategoria();
                 <div class="InisiarSesion" <%=formBuscarCUenta%> >
                     <h2> Buscar Producto </h2>
                     <br>
-                    <form method="post" action="servlet_EditarProductos" >
+                    <form name="editar_producto" method="post" action="servlet_EditarProductos" onsubmit="return buscarProducto()" >
                         <table>
                             <tr>
                             <tr><td><br></td><td></td></tr>
                             <tr><td>Codigo de Producto&nbsp;</td><td><input type="text"
-                                                                   name="txt_code" placeholder="codigo de producto a editar"></td></tr>
+                                                                            name="txt_code" placeholder="codigo de producto a editar" onkeypress="return soloNumeros(event)"></td></tr>
                             <tr><td><br></td><td></td></tr>
                             <tr><td></td><td> <input type="submit" name="btn_buscar" value="Buscar Producto"></td></tr>
                             <tr><td><br></td><td></td></tr>
@@ -158,41 +160,42 @@ ArrayList<Producto> cProductos = product.ListarCategoria();
                 <div class="cuenta" >
                     <h2> Editar Producto </h2>
                     <br>
-                    <form method="post" action="servlet_EditarProductos"  >
+                    <form name="editarProducto1" method="post" action="servlet_EditarProductos" onsubmit="return form_editar()"  >
                         <table>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Codigo de producto* </td><td><input type="text" name="txt_code" value="<%= i.getCodigo()%>"></td></tr>
+                        <tr><td>Codigo de producto* </td><td><input type="text" name="txt_code" value="<%= i.getCodigo()%>" onkeypress=" return soloNumeros(event)" ></td></tr>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Nombre* </td><td><input type="text"  name="txt_nombre" value="<%= i.getNombre()%>"></td></tr>
+                        <tr><td>Nombre* </td><td><input type="text"  name="txt_nombre" value="<%= i.getNombre()%>" onkeypress="return soloLetras(event)"></td></tr>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Stock* </td><td><input type="number"  name="txt_stock" value="<%= i.getStock()%>"></td></tr>
+                        <tr><td>Stock* </td><td><input type="number"  name="txt_stock" value="<%= i.getStock()%>" onkeypress=" return soloNumeros(event)"></td></tr>
                         <tr><td><br></td><td></td></tr>
-                        <tr><td>Precio (IVA incluido)* </td><td><input type="number" name="txt_precio" value="<%= i.getPrecio()%>" placeholder="ingrese valores sin punto"></td></tr>
+                        <tr><td>Precio (IVA incluido)* </td><td><input type="number" name="txt_precio" value="<%= i.getPrecio()%>" placeholder="ingrese valores sin punto" onkeypress=" return soloNumeros(event)"></td></tr>
                         <tr><td><br></td><td></td></tr>
                         <tr><td>Peso en Kilogramos* </td><td><input type="text" value="<%= i.getPeso()%>" name="txt_peso" placeholder="1,3K o 3K"></td></tr>
                         <tr><td><br></td><td></td></tr>
 
-                        <tr><td>Categoria* </td><td><select name="categoria" >
-                                    <option>Seleccione una categoria</option>
-                                    <option>Sofás</option>
-                                    <option>Mesas</option>
-                                    <option>Sillas</option>
-                                    <option>Camas</option>
-                                    <option>Escritorios</option>
-                                    <option>Cómodas</option>
-                                    <option>Mesas de comedor</option>
-                                    <option>Sofás seccionales</option>
-                                    <option>Muebles de televisor</option>
-                                    <option>Bibliotecas</option>
-                                    <option>Mesitas de café</option>
-                                    <option>Beladores</option>
-                                    <option>Mini bar</option>
-                                    <option>Islas para cocina</option>
-                                    <option>Armarios</option>
-                                    <option>Organizadores de juguetes</option>
-                                    <option>Percheros de pared</option>
-                                    <option>Muebles para jardín</option>
-                                    <option>Otros</option>
+                        <tr><td>Categoria* </td><td><select name="categoria" name="region" id="cate" required >
+                                    <option value="0" disabled selected>Seleccione una categoria</option>
+                                    <option value="1">Sofás</option>
+                                    <option value="2">Mesas</option>
+                                    <option value="3">Sillas</option>
+                                    <option value="4">Camas</option>
+                                    <option value="5">Escritorios</option>
+                                    <option value="6">Cómodas</option>
+                                    <option value="7">Mesas de comedor</option>
+                                    <option value="8">Sofás seccionales</option>
+                                    <option value="9">Muebles de televisor</option>
+                                    <option value="10">Bibliotecas</option>
+                                    <option value="11">Mesitas de café</option>
+                                    <option value="12">Beladores</option>
+                                    <option value="13">Mini bar</option>
+                                    <option value="14">Islas para cocina</option>
+                                    <option value="15">Armarios</option>
+                                    <option value="16">Organizadores de juguetes</option>
+                                    <option value="17">Percheros de pared</option>
+                                    <option value="18">Muebles para jardín</option>
+                                    <option value="19">Otros</option>
+                                    <option value="20"><%= i.getCategoria()%></option>
                                 </select></td></tr>
                         <tr><td><br></td><td></td></tr>
                         <tr><td>Descripcion* </td><td><textarea name="descripcion" rows="4" cols="36" placeholder="Ingrese una breve descripcion"><%= i.getDescripcion()%></textarea></td></tr>
@@ -240,4 +243,7 @@ ArrayList<Producto> cProductos = product.ListarCategoria();
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <!--VALIDA FORMULARIO-->
+    <script src="js/Metodos.js" type="text/javascript"></script>
 </html>
