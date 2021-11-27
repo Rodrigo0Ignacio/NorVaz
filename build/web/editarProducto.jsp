@@ -176,26 +176,26 @@ ArrayList<Producto> cProductos = product.ListarCategoria();
 
                         <tr><td>Categoria* </td><td><select name="categoria" name="region" id="cate" required >
                                     <option value="0" disabled selected>Seleccione una categoria</option>
-                                    <option value="1">Sofás</option>
-                                    <option value="2">Mesas</option>
-                                    <option value="3">Sillas</option>
-                                    <option value="4">Camas</option>
-                                    <option value="5">Escritorios</option>
-                                    <option value="6">Cómodas</option>
-                                    <option value="7">Mesas de comedor</option>
-                                    <option value="8">Sofás seccionales</option>
-                                    <option value="9">Muebles de televisor</option>
-                                    <option value="10">Bibliotecas</option>
-                                    <option value="11">Mesitas de café</option>
-                                    <option value="12">Beladores</option>
-                                    <option value="13">Mini bar</option>
-                                    <option value="14">Islas para cocina</option>
-                                    <option value="15">Armarios</option>
-                                    <option value="16">Organizadores de juguetes</option>
-                                    <option value="17">Percheros de pared</option>
-                                    <option value="18">Muebles para jardín</option>
-                                    <option value="19">Otros</option>
-                                    <option value="20"><%= i.getCategoria()%></option>
+                                    <option value="Sofás">Sofás</option>
+                                    <option value="Mesas">Mesas</option>
+                                    <option value="Sillas">Sillas</option>
+                                    <option value="Camas">Camas</option>
+                                    <option value="Escritorios">Escritorios</option>
+                                    <option value="Cómodas">Cómodas</option>
+                                    <option value="Mesas de comedor">Mesas de comedor</option>
+                                    <option value="Sofás seccionales">Sofás seccionales</option>
+                                    <option value="Muebles de televisor">Muebles de televisor</option>
+                                    <option value="Bibliotecas">Bibliotecas</option>
+                                    <option value="Mesitas de café">Mesitas de café</option>
+                                    <option value="Beladores">Beladores</option>
+                                    <option value="Mini bar">Mini bar</option>
+                                    <option value="Islas para cocina">Islas para cocina</option>
+                                    <option value="Armarios">Armarios</option>
+                                    <option value="Organizadores de juguetes">Organizadores de juguetes</option>
+                                    <option value="Percheros de pared">Percheros de pared</option>
+                                    <option value="Muebles para jardín">Muebles para jardín</option>
+                                    <option value="Otros">Otros</option>
+                                    <option selected value="<%= i.getCategoria()%>"><%= i.getCategoria()%></option>
                                 </select></td></tr>
                         <tr><td><br></td><td></td></tr>
                         <tr><td>Descripcion* </td><td><textarea name="descripcion" rows="4" cols="36" placeholder="Ingrese una breve descripcion"><%= i.getDescripcion()%></textarea></td></tr>

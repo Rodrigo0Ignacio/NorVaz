@@ -300,9 +300,6 @@ function validarDatos(){
             }if(descripcion == ""){
                 alertify.alert("Error","EL campo Descripcion producto esta vacio").set('label','ok');
                 return false;
-            }if(img == ""){
-                alertify.alert("Error","EL campo Ingresa Imagen producto esta vacio").set('label','ok');
-                return false;
             }if(categoria.value == 0 || categoria.value == ""){
                 alertify.alert("Error","Categoria : seleccione un elemento").set('label','ok');
                 return false;
