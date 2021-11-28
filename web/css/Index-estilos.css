@@ -8,7 +8,7 @@
     text-decoration: none;
 }
 body{
-    background-color: #ffffff;
+    background-color: #13293d;
 }
 
 .flotante{
@@ -35,9 +35,9 @@ body{
 #cerrar img{
     position: absolute;
     right: 1px;
-    height: 30px;
-    width: 30px;
-    top: -5px;
+    height: 26px;
+    width: 26px;
+    top: -1px;
 
 }
 
@@ -74,11 +74,15 @@ border-radius: 5px;
     padding: 2px;
     display:flex;
     width:100%;
+    height:170px;
+    margin-right:20px;
+    margin-bottom: 20px;
     /*  background: rgb(10, 134, 72); */
 }
 
 #logo{
     width:80%;
+    margin:10px;
 }
 
 #logo img{
@@ -88,9 +92,12 @@ border-radius: 5px;
     padding: 2px;
     border-radius: 3px;
     border: solid 0.5px black;
+    box-shadow: 0 0 4px 1.5px  #B64F3A;
 }
 
 #CuentaUser{
+    font: oblique bold 100% cursive;
+    color:#2f2d2e;
     width:20%;
     border: solid 0.5px black;
     max-width: 300px;
@@ -98,7 +105,7 @@ border-radius: 5px;
     border-radius: 3px;
     text-align: center;
     border-radius: 4px;
-    background-color: #e6dddd;
+    background-color: #e8f1f2;
     margin-right: 1px;
 }
 #CuentaUser ul {
@@ -109,12 +116,14 @@ border-radius: 5px;
     max-height: 60px;
     max-width: 60px;    
 }
-
+#CuentaUser li a{
+    color: inherit;
+    transition: all .3s;
+}
 #CuentaUser li a:hover{
     color: #CE7D35;
     transition: all .3s;
 }
-
 /* maxwidth ancho maximo
 width ancho proporcional a la pantalla % pantalla
 se puede jugar con los 2 pa que calze con la pagina*/
@@ -128,7 +137,6 @@ se puede jugar con los 2 pa que calze con la pagina*/
     box-shadow: 0 0 0 0 #fff,
         0px 15px 30px;
 }
-
 /*width 100% por cada imagen como son 3 300%
 aqui podijugar con los tamaños de todos los slider segun el contenido*/
 #slider {
@@ -136,24 +144,19 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     width: 300%;
     max-height: 300px;
 }
-
-
 #slider section {
     width: 100%;
 
 }
-
 #slider a {
     margin:0;
 
 }
-
 #slider img {
     display: block;
     width: 100%;
     height: 100%;
 }
-
 #btn-prev, #btn-next{
     width:40px;
     height:40px;
@@ -169,73 +172,72 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     font-family: monospace;
     cursor:pointer;
 }
-
 #btn-prev:hover, #btn-next:hover{
     background: rgba(255, 255, 255, 1);
 }
-
 #btn-prev{
     left:10px;
 }
-
 #btn-next{
     right:10px;
 }
-
 /*imagenes del header */
-
-
 #contenido{
     padding-top:50px;
     width:100%;
-    min-width:654px;
+    min-width:800px;
     /*   background: #02d5fa;*/
 }
 #contenido input{
     display:none;
 }
-
 #contenido label{
     padding-top: 20px;
-    background:gainsboro;
+    background:#2970ca;
     cursor: pointer;
     padding-bottom: 19px;
     padding-right: 100px;
     padding-left: 100px;
     text-align:center;
+    color:white;
+    font: oblique bold 120% cursive;
+    border-radius: 3px;
 }
 #contenido label:hover{
-    background:lightslategrey;
+    background:#2f2d2e;
+    opacity: 0.7;
 }
 
 #btn-vendidos:checked ~ #articulos .comentado{
     display:none; 
 }
 #btn-vendidos:checked ~ .vendidos{
-    background:lightslategrey;
+    background:#006494;
 }
-
 #btn-comentados:checked ~ #articulos .vendido{
     display:none;
 }
 #btn-comentados:checked ~ .comentados{
-    background:lightslategrey;
+    background:#006494;
 }
 
 #articulos {
-    border-top: solid 3px royalblue;
+    border-top: solid 3px #2f2d2e;
     padding-top:10px;
-    background-color:lightslategrey;
-    box-shadow: 5px 10px 8px #888888;
+    background-color:#006494;
+    box-shadow: 5px 10px 8px #2970ca;
+    border-radius: 10px;
 }
 
 /*estilo de productos contenedor*/
 .producto{
     display:inline-block;
     width:23%;
-    background: #e6dddd;
+    background: #2970ca;
     border: solid 0.5px black;
-    border-radius: 3px;
+    border-radius: 10px;
+    margin: 10px;
+    font: oblique bold 100% cursive;
 
 }
 /*imagen del producto descripcion y boton*/
@@ -245,8 +247,9 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     left:10%;
     right:10%;
     position:relative;
+    margin: 10px;
+    border-radius:5px;
 }
-
 #Boton button{
     height: 50px;
     width: 50%;
@@ -254,21 +257,25 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     left: 25%;
     right: 25%;
     position: relative;
+    font: oblique bold 100% cursive;
+    margin:10px;
+    border-radius:10px;
 }
 
+#Boton button:hover{
+background: #2f2d2e;
+color:white;
+opacity: 1;
+}
 #detalles {
 
 }
-
 #detalles li{
     list-style: none;
     padding:5px;
     font-size: 14px;
     text-align: justify;
 }
-
-
-
 /* barra de opciones*/
 #nav1{
     padding-top:10px;
@@ -280,33 +287,35 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
 #nav2{
     /*  background: #990b0b; */
 }
-
 .navegacion{
     width:100%;
+    max-height: 80px;
     display:block;
-    background: #e6dddd;
+    background: #2f2d2e;
     border:black 0.5px solid;
     box-shadow: 5px 10px 8px #888888;
     border-radius: 5px;
+    font: oblique bold 100% cursive;
 }
 .navegacion2{
+    font: oblique bold 100% cursive;
     width:100%;
+    height: 100%;
+    max-height: 80px;
     margin-left: auto;
     margin-right: auto;
     display:block;
-    background: #e6dddd;
+    background: #2f2d2e;
     border:black 0.5px solid;
     box-shadow: 5px 10px 8px #888888;
     border-radius: 5px;
 }
-
 .navegacion ul{
     list-style: none;
     border-radius: 5px;
     padding:0;
 
 }
-
 .navegacion2 ul{
     list-style: none;
     border-radius: 5px;
@@ -320,46 +329,38 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     text-align: center;
     display:inline-block;
 }
-
 .menu2  li{
     border-right:3px solid darkorange;
     flex-grow: 1;
     text-align: center;
 }
-
 .menu  li  a{
     display:block;
     padding:20px;
-    color:darkblue;
+    color:white;
     text-decoration: none;
 }
-
 .menu2  li  a{
     display:block;
     padding:17px;
-    color:darkblue;
+    color:white;
     text-decoration: none;
 }
-
 .menu li:hover {
     background:rgba(0,0,0,0.3)
 }
-
 .menu2 li:hover {
     background:rgba(0,0,0,0.3)
 }
-
 .menu li a:hover{
     color: #CE7D35;
     transition: all .3s;
 }
-
 .menu2 li a:hover{
     color: #CE7D35;
     transition: all .3s;
 }
 /* Submenu*/
-
 .submenu{
     position: absolute;
     background: #333333;
@@ -368,94 +369,87 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     transition: opacity 1.5s;
     border-radius: 3px;
 }
-
 .submenu li a{
     display: block;
     padding: 15px;
     color: #fff;
     text-decoration: none;
 }
-
-
 .menu li:hover .submenu{
     visibility: visible;
     opacity: 1;
 }
-
 #servicios {
     padding-top:20px;
 
 }
-
 .servicio{
+    font: oblique bold 100% cursive;
+    color:#e8f1f2;
     display:flex;
-    background: #e6dddd;
-    padding-top: 2px;
-    margin: 20px;
+    background: #006494;
+    padding-top: 5px;
+    margin: 10px;
     border: solid 0.5px black;
-    border-radius: 3px;
+    border-radius: 10px;
     box-shadow: 5px 10px 8px #888888;
 }
 /*imagen del producto descripcion y boton*/
-
 #imagenservicio{
-    width:40%;
+    width:30%;
 }
-
 #imagenservicio img{
     height: 180px;
-    width: 350px;
+max-width: 230px;
     border: solid 0.5px;
     margin: 2px;
-    border-radius: 2px;
+    border-radius: 10px;
 }
-
 #Botonservicio{
     text-align: center;
     padding: 10px;
-    width: 150px;
+    width: 20%;
     height: 70px;
+    margin-top:4%;
 }
-
 #Botonservicio button{
-    height: 70px;
-    width: 150px;
+    font: oblique bold 100% cursive;
+    height: 50px;
+    width: 100px;
     font-size: 18px;
+    
 }
-
 #detallesservicio{
-    margin-left: 40px;
-    width: 60%;
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 40%;
 
 }
-
 #detallesservicio li{
     list-style: none;
     font-size: 23px;
     text-align: justify;
 }
-
-
 #fooster{
+    font: oblique bold 100% cursive;
     background: #535151;
-    padding: 3px;
-    margin: 30px auto;
+    padding: 15px;
+    margin: 30px;
     color: #fff;
 }
-
 #fooster img{
     height:50px;
-    width:5%;
+    width:50px;
     margin-left:47.5%;
     margin-right:47.5%;
 }
 #fooster{
     text-align:center;
 }
-
 #fooster a{
     text-decoration:none;
-    color:black;
+    color:black;  
+    margin:10px;
 }
 #fooster a:hover{
     color:#ffffff;

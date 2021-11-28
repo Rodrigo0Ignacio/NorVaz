@@ -141,7 +141,7 @@ switch (rol){
                              <table>
                                  <tr>
                                  <tr><td><br></td><td></td></tr>
-                                 <tr><td>RUT&nbsp;&nbsp;</td><td><input type="text"
+                                 <tr><td>RUT&nbsp;&nbsp;</td><td><input type="text" id="txt_Rut"
                                  name="txt_rut" placeholder="Ingrese el rut de la cuenta a editar"></td></tr>
                                  <tr><td><br></td><td></td></tr>
                                  <tr><td></td><td> <input type="submit" name="btn_buscar" value="Buscar Cuenta"></td></tr>
@@ -157,20 +157,20 @@ switch (rol){
                     <div class="cuenta" >
                         <h2> Editar Cuenta </h2>
                         <br>
-                        <form method="post" action="servlet_EditarAdministrador"  >
+                        <form name="editar_usuario" method="post" action="servlet_EditarAdministrador" onsubmit="return editar()">
                             <table>
                                 <tr><td><br></td><td></td></tr>
                                 <tr><td><input type="hidden" value="<%=i.getId_usuario()%>" name="id"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>RUT* </td><td><input type="text" value="<%=i.getRut()%>" name="txt_rutM"></td></tr>
+                                <tr><td>RUT* </td><td><input id="txt_Rut2" type="text" value="<%=i.getRut()%>" name="txt_rutM"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Nombre* </td><td><input type="text" value="<%=i.getNombre()%>" name="txt_nombreM"></td></tr>
+                                <tr><td>Nombre* </td><td><input type="text" value="<%=i.getNombre()%>" name="txt_nombreM" onkeypress="return soloLetras(event)"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Apellidos* </td><td><input type="text" value="<%=i.getApellidos()%>" name="txt_apellidoM"></td></tr>
+                                <tr><td>Apellidos* </td><td><input type="text" value="<%=i.getApellidos()%>" name="txt_apellidoM" onkeypress="return soloLetras(event)"></td></tr>
                                 <tr><td><br></td><td></td></tr>
                                 <tr><td>Email* </td><td><input type="email" value="<%=i.getEmail()%>" name="txt_emailM" placeholder="ejemplo: roberto.farias@dominio.cl"></td></tr>
                                 <tr><td><br></td><td></td></tr>
-                                <tr><td>Telefono* </td><td><input type="tel" value="<%=i.getTelefono()%>" name="txt_telefonoM" placeholder="ejemplo: 98745632"></td></tr>
+                                <tr><td>Telefono* </td><td><input type="tel" value="<%=i.getTelefono()%>" name="txt_telefonoM" placeholder="ejemplo: 98745632" onkeypress="return soloNumeros(event)"></td></tr>
                                 <tr><td><br></td><td></td></tr>
 
                                 <tr><td></td><td> <input type="submit" name="btn_editar" value="Editar Cuenta"></td></tr>
@@ -216,5 +216,8 @@ switch (rol){
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
-    <!--SE UNE UNA RAMA NUEVA-->
+    <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js%22%3E"></script>
+    <script src="js/rutValidador.js"></script>
+    
 </html>

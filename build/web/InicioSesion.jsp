@@ -155,20 +155,20 @@ switch (rol){
                            <tr><td><br></td><td></td></tr>
                            <tr><td>Apellidos* </td><td><input type="text" value="" name="txt_regisApellido" onkeypress="return soloLetras(event)"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Email* </td><td><input type="email" value="" name="txt_regisEmail" placeholder="ejemplo: roberto.farias@dominio.cl" onclick=" return validarEmail(document.getElementById('correo').value)"></td></tr>
+                           <tr><td>Email* </td><td><input type="email" value="" name="txt_regisEmail" placeholder="ejemplo: roberto.farias@dominio.cl" onclick="return validarEmail(document.getElementById('correo').value)"></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Rut* </td><td><input type="text" value="" name="txt_regisRut" placeholder="ejemplo: 12.111.222-4"></td></tr>
+                           <tr><td>Rut* </td><td><input type="text" value="" id="txt_Rut" name="txt_regisRut"  placeholder=" 11.111.111-1"></td></tr>
                            <tr><td><br></td><td></td></tr>
                            <tr><td>Telefono* </td><td><input type="tel" value="" name="txt_regisTelefono" placeholder="ejemplo: 98745632" onkeypress=" return soloNumeros(event)"  ></td></tr>
                            <tr><td><br></td><td></td></tr>
-                           <tr><td>Contraseña* </td><td><input type="password" value="" name="txt_regisContrasena"></td></tr>
+                           <tr><td>Contraseña* </td><td><input type="password" value=""  name="txt_regisContrasena"></td></tr>
                            <tr><td><br></td><td></td></tr>
                            <tr><td>Confirma contraseña* </td><td><input type="password" value="" name="txt_regisConfirmaContrasena"></td></tr>
                                  
                            <tr><td><br></td><td></td></tr>
                            
                            
-                           <tr><td></td><td> <input type="submit" name="btn_Registrar" value="Registrarse"></td></tr>
+                           <tr><td></td><td> <input type="submit" id="btn_Registrar" name="btn_Registrar" value="Registrarse"></td></tr>
         
                     </table>
                     </form>
@@ -203,6 +203,10 @@ switch (rol){
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
+    <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js%22%3E"></script>
+    <script src="js/rutValidador.js"></script>
+    
     
 
    

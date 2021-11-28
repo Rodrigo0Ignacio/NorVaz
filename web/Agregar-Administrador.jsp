@@ -134,7 +134,7 @@ switch (rol){
                              <table>
                                  <tr>
                                  <tr><td><br></td><td></td></tr>
-                                 <tr><td>RUT* </td><td><input type="text" value="" name="txt_rut"></td></tr>
+                                 <tr><td>RUT* </td><td><input id="txt_Rut" type="text" value="" name="txt_rut"></td></tr>
                                  <tr><td><br></td><td></td></tr>
                                  <tr><td>Nombre* </td><td><input type="text" value="" name="txt_nombre" onkeypress="return soloLetras(event)"></td></tr>
                                  <tr><td><br></td><td></td></tr>
@@ -184,4 +184,7 @@ switch (rol){
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
+    <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js%22%3E"></script>
+    <script src="js/rutValidador.js"></script>
 </html>

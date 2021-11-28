@@ -1,11 +1,11 @@
 
 
 function validarDatos(){
-            var nombre = document.registro.txt_regisNombre.value;
-            var apellidos = document.registro.txt_regisApellido.value;
-            var email = document.registro.txt_regisEmail.value;
-            var rut = document.registro.txt_regisRut.value;
-            var telefono = document.registro.txt_regisTelefono.value;
+            nombre = document.registro.txt_regisNombre.value;
+            apellidos = document.registro.txt_regisApellido.value;
+            email = document.registro.txt_regisEmail.value;
+            rut = document.registro.txt_regisRut.value;
+            telefono = document.registro.txt_regisTelefono.value;
             
             if(nombre.length == 0){
                 alertify.alert("Error","El campo Nombre es requerido").set('label','ok');
@@ -22,20 +22,39 @@ function validarDatos(){
             if(rut.length == 0){
                 alertify.alert("Error","El campo RUT es requerido").set('label','ok');
                 return false;
+            }else{
+            
+            let rutV=$('#txt_Rut').val();
+            let rutvalidador = new rutValidador(rutV);
+    
+            if(rutvalidador.esvalido){
+            }else{
+    
+            alertify.alert("Error","El rut es invalido").set('label','ok');
+            return false;}
             }
+            
+            
             if(telefono.length == 0){
                 alertify.alert("Error","El campo telefono es requerido").set('label','ok');
                 return false;
             }
             
-             if(document.registro.txt_regisContrasena.value == document.registro.txt_regisConfirmaContrasena.value){
+            if(document.registro.txt_regisContrasena.value.length>7){
+            if(document.registro.txt_regisContrasena.value == document.registro.txt_regisConfirmaContrasena.value){
                  return true;
             } else{
                 alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
                  return false;
             }
+            }else{
+                alertify.alert("Error","ingrese una contraseña es requerido").set('label','ok');
+            return false;}
+     
               
         }
+              
+        
         
         function soloLetras(e){
             var tecla = e.keyCode || e.which;
@@ -226,11 +245,19 @@ function validarDatos(){
         function buscarRut(){
             var rut = document.buscar_rut.txt_rut.value;
             
-            if(rut == ""){
-                alertify.alert("Error","Ingrese el rut").set('label','ok');
+             if(rut == ""){
+                alertify.alert("Error","EL campo rut esta vacio").set('label','ok');
                 return false;
             }else{
-                return true;
+            
+            let rutV=$('#txt_Rut').val();
+            let rutvalidador = new rutValidador(rutV);
+    
+            if(rutvalidador.esvalido){
+            }else{
+    
+            alertify.alert("Error","El rut es invalido").set('label','ok');
+            return false;}
             }
             
         }
@@ -246,7 +273,18 @@ function validarDatos(){
             if(rut == ""){
                 alertify.alert("Error","EL campo rut esta vacio").set('label','ok');
                 return false;
-            }if(nombre == ""){
+            }else{
+            
+            let rutV=$('#txt_Rut').val();
+            let rutvalidador = new rutValidador(rutV);
+    
+            if(rutvalidador.esvalido){
+            }else{
+    
+            alertify.alert("Error","El rut es invalido").set('label','ok');
+            return false;}
+            }
+            if(nombre == ""){
                 alertify.alert("Error","EL campo nombre esta vacio").set('label','ok');
                 return false;
             }if(apellidos == ""){
@@ -350,10 +388,46 @@ function validarDatos(){
                alertify.alert("Error", "Ingrese una categoria").set('label', 'ok');
                return false;
             }
+   
+        }
+        
+        function editar(){
+            var nombre = document.editar_usuario.txt_nombreM.value;
+            var apellidos = document.editar_usuario.txt_apellidoM.value;
+            var email = document.editar_usuario.txt_emailM.value;
+            var rut = document.editar_usuario.txt_rutM.value;
+            var telefono = document.editar_usuario.txt_telefonoM.value;
             
-                    
+           if(nombre == ""){
+                alertify.alert("Error","EL campo Nombre esta vacio").set('label','ok');
+                return false;
+            }if(apellidos == ""){
+                alertify.alert("Error","EL campo apellidos esta vacio").set('label','ok');
+                return false;
+            }if(email == ""){
+                alertify.alert("Error","EL campo email esta vacio").set('label','ok');
+                return false;
+            }if(rut == ""){
+                alertify.alert("Error","EL campo rut esta vacio").set('label','ok');
+                return false;
+            }else{
+            
+            let rutV=$('#txt_Rut2').val();
+            let rutvalidador = new rutValidador(rutV);
+    
+            if(rutvalidador.esvalido){
+            }else{
+    
+            alertify.alert("Error","El rut es invalido").set('label','ok');
+            return false;}
+            }
             
             
+            
+            if(telefono == ""){
+                alertify.alert("Error","EL campo telefono esta vacio").set('label','ok');
+                return false;
+            }
         }
 
         
