@@ -1,5 +1,5 @@
 
-
+function a(){;}
 function validarDatos(){
             var nombre = document.registro.txt_regisNombre.value;
             var apellidos = document.registro.txt_regisApellido.value;
