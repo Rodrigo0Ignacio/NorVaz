@@ -1,4 +1,4 @@
-
+var a=1;
 
 function validarDatos(){
             nombre = document.registro.txt_regisNombre.value;
