@@ -15,19 +15,20 @@ public class Conexion {
     public ResultSet rs = null;
     public String query = null;
     public int resultado = 0;
+    public boolean errorDesconeccion = false;
 
     public Conexion() {
     }
     
 
- protected Connection conectar() {
+ public Connection conectar() {
        try {
             Class.forName("com.mysql.jdbc.Driver");
             
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/norvaz?zeroDateTimeBehavior=convertToNull","root","");
                 
             } catch (ClassNotFoundException | SQLException ex ) { 
-               JOptionPane.showMessageDialog(null, "Error en la conexion");
+               errorDesconeccion = true;
             }        
             return con; 
   }
@@ -42,3 +43,4 @@ public class Conexion {
 
     
 }
+

@@ -177,24 +177,6 @@ switch (rol){
                     </table>
                 </form>
             </div>
-          <div class="contenidoText">
-                 <h3>Nota</h3>
-                 <hr>
-                <p>
-                Al momento de insertar un producto debe llenar todos los campos,
-                y escribir todo valor numerico sin puntos, de lo contrario, el sistema
-                lo rechazara.
-                el campo "Ingresar Imagen" se puede dejar en blanco, pero no es recomendable
-                ya que el producto se ingresara sin su respectiva imagen, en el caso de dejar en blanco
-                en la opcion Editar producto se podra modificar dicho campo.
-                </p>
-                <%if (listaErrores != null) {%>
-                <%for (int i = 0; i < listaErrores.size(); i++) {%>
-                <li><%=listaErrores.get(i)%></li>
-
-                <%}%>
-                <%}%>
-             </div>
            
         </div>
 <!--VENTANA FLOTANTE-->

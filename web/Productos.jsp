@@ -168,7 +168,7 @@
                 </div>
 
                 <div id="productos">
-                    <h1>Productos</h1>
+                    <h1>  Productos</h1>
                     <%if (listac != null) {
                             Producto prod = listac.get(0);
                     %>

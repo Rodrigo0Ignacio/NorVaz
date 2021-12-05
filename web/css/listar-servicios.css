@@ -7,7 +7,7 @@
     text-decoration: none;
 }
 body{
-    background-color: #13293d;
+    background-color: #F0E9D2;
 }
 #contenedor{
     width:85%;
@@ -41,9 +41,9 @@ body{
     width:100%;
     max-height: 80px;
     display:block;
-    background: #2f2d2e;
+    background: #181D31;
     border:black 0.5px solid;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 3px 8px 8px #888888;
     border-radius: 5px;
     font: oblique bold 100% cursive;
 }
@@ -55,19 +55,17 @@ body{
     margin-left: auto;
     margin-right: auto;
     display:block;
-    background: #2f2d2e;
+    background: #181D31;
     border:black 0.5px solid;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 5px 8px 8px #888888;
     border-radius: 5px;
 }
-
 .navegacion ul{
     list-style: none;
     border-radius: 5px;
     padding:0;
 
 }
-
 .navegacion2 ul{
     list-style: none;
     border-radius: 5px;
@@ -81,40 +79,33 @@ body{
     text-align: center;
     display:inline-block;
 }
-
 .menu2  li{
-    border-right:1px solid darkorange;
+    border-right:3px solid darkorange;
     flex-grow: 1;
     text-align: center;
 }
-
 .menu  li  a{
     display:block;
     padding:20px;
     color:white;
     text-decoration: none;
 }
-
 .menu2  li  a{
     display:block;
     padding:17px;
     color:white;
     text-decoration: none;
 }
-
 .menu li:hover {
-    background:rgba(0,0,0,0.3)
+    background: #181D31;
 }
-
 .menu2 li:hover {
-    background:rgba(0,0,0,0.3)
+    background:#181D31;
 }
-
 .menu li a:hover{
     color: #CE7D35;
     transition: all .3s;
 }
-
 .menu2 li a:hover{
     color: #CE7D35;
     transition: all .3s;
@@ -145,12 +136,12 @@ body{
 
 
 #contenido{
-    background:#e8f1f2;
+    background:#678983;
     padding-top:50px;
     width:100%;
     min-width:1050px;
   display:flex;
-  border-radius:10px;
+  border-radius:4px;
 }
 
 #contenido h2{
@@ -207,7 +198,6 @@ padding: 50px;
     padding: 2px;
     border-radius: 3px;
     border: solid 0.5px black;
-    box-shadow: 0 0 4px 1.5px  #B64F3A;
 }
 
 #CuentaUser{
@@ -220,7 +210,7 @@ padding: 50px;
     border-radius: 3px;
     text-align: center;
     border-radius: 4px;
-    background-color: #e8f1f2;
+    background-color: #E6DDC4;
     margin-right: 1px;
 }
 
@@ -318,12 +308,11 @@ border-radius: 5px;
 
 #fooster{
     font: oblique bold 100% cursive;
-    background: #535151;
+    background: #373d58;
     padding: 15px;
     margin: 30px;
     color: #fff;
 }
-
 #fooster img{
     height:50px;
     width:50px;
@@ -333,14 +322,16 @@ border-radius: 5px;
 #fooster{
     text-align:center;
 }
-
 #fooster a{
     text-decoration:none;
     color:black;  
     margin:10px;
 }
 #fooster a:hover{
-    color:#ffffff;
+    color:#CE7D35;
+}
+#fooster a{
+    color: white;
 }
 
 .producto{

@@ -154,9 +154,6 @@ switch (rol){
                        <tr><td>Repita contraseña* </td><td><input type="password" value="" name="txt_password2"></td></tr>
                        <tr><td><br></td><td></td></tr>
                        <tr><td></td><td> <input type="submit" name="btn_restablecer" value="Cambiar"></td></tr>
-                       <tr><td><br></td><td></td></tr>
-                       <p> Al modificar la contraseña tendra que volver a 
-                               iniciar sesion.</p>
                        <input type="hidden" name="txt_correo" value="<%=usuario%>" placeholder="<%=usuario%>">    
 
                        <!--MUESTRA LOS MENSAJES DE ERROR -->

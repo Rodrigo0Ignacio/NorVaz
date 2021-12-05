@@ -135,9 +135,7 @@
                 </nav>
             </div>
 
-            <div id="divpedido">
-                <h1 id="pedido">Pedidos</h1>
-            </div>
+          
             <%if (ventas != null) {
             for (Venta v : ventas) {%>
             <div id="contenido">

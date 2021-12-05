@@ -56,6 +56,7 @@ switch (rol){
         <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <link href="css/listar-servicios.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="img/martillo.png">
         <script>
             $(document).ready(function() {
@@ -63,7 +64,7 @@ switch (rol){
 } );
         </script>
 
-        <link href="css/listar-servicios.css" rel="stylesheet" type="text/css"/>
+        
         <title>NorVaz - Listar Servicios</title>
     </head>
     <body>

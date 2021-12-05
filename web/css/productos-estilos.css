@@ -8,7 +8,7 @@
     text-decoration: none;
 }
 body{
-    background-color: #13293d;
+    background-color: #F0E9D2;
 }
 
 #contenedor{
@@ -60,9 +60,9 @@ body{
     width:100%;
     max-height: 80px;
     display:block;
-    background: #2f2d2e;
+    background: #181D31;
     border:black 0.5px solid;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 3px 8px 8px #888888;
     border-radius: 5px;
     font: oblique bold 100% cursive;
 }
@@ -74,9 +74,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     display:block;
-    background: #2f2d2e;
+    background: #181D31;
     border:black 0.5px solid;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 5px 8px 8px #888888;
     border-radius: 5px;
 }
 
@@ -122,11 +122,10 @@ body{
 }
 
 .menu li:hover {
-    background:rgba(0,0,0,0.3)
+    background: #181D31;
 }
-
 .menu2 li:hover {
-    background:rgba(0,0,0,0.3)
+    background:#181D31;
 }
 
 .menu li a:hover{
@@ -216,7 +215,7 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
 }
 
 #btn-prev:hover, #btn-next:hover{
-    background: rgba(255, 255, 255, 1);
+    background: rgb(8, 204, 90);
 }
 
 #btn-prev{
@@ -230,14 +229,17 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
 /*--------------------------*/
 
 #contenido{
-background-color:#006494;
+background-color:#678983;
 display:flex;
-border-radius:15px;
+border-radius:10px;
 margin:20px;
+}
+#contenido h1{
+    padding-left: 10px;
 }
 
 #menuproductos{
-background: #2970ca;
+background: #678983;
 width:15%;
 min-width: 130px;
 margin-left: 2%;
@@ -272,12 +274,12 @@ font: oblique bold 120% cursive;
 
 #productos{
     font: oblique bold 20% cursive;
-    background: #2970ca;
-    width:80%;
+    background: #678983;
+    width:90%;
     margin: 3%;
     min-width: 230px;
     border: solid 2px #fff;
-    border-radius: 15px;
+    border-radius: 9px;
     color:white;
 }
 
@@ -286,7 +288,6 @@ font: oblique bold 120% cursive;
 }
 
 .producto{
-    
     max-width:300px;
     margin:1%;
     min-width: 250px;
@@ -295,6 +296,7 @@ font: oblique bold 120% cursive;
     border-radius: 10px;
     color:#2f2d2e;
 }
+
 /*imagen del producto descripcion y boton*/
 
 #imagenProducto{
@@ -306,17 +308,18 @@ font: oblique bold 120% cursive;
     max-height: 180px;
     width: 65%;
     margin-right: 15%;
-    border-radius: 12px;
+    border-radius: 5px;
 }
 
 #Boton{
     padding: 10px;
     margin:10px;
+    width: 100%;
+    height: 100%;
    /* border: solid 0.5px #b48888; */
 }
 
 #Boton button{
-width: 70%;
 background: #2f2d2e;
 font-size: 15px;
 min-width:70px;
@@ -333,28 +336,27 @@ color:#2f2d2e;
 #detalles{
     width: 80%;
     margin:20px;
-    border-color:#2970ca;
+    border-color:#181D31;
 }
 
 #detalles li{
     list-style: none;
     font-size: 14px;
     text-align: justify;
-    border-style: solid;
+    border-style: outset;
     margin:3px;
-    border-color:#2970ca;
-    border-radius:10px;
+    border-color:#181D31;
+    border-radius:8px;
 }
 
 
 #fooster{
     font: oblique bold 100% cursive;
-    background: #535151;
+    background: #373d58;
     padding: 15px;
     margin: 30px;
     color: #fff;
 }
-
 #fooster img{
     height:50px;
     width:50px;
@@ -364,14 +366,16 @@ color:#2f2d2e;
 #fooster{
     text-align:center;
 }
-
 #fooster a{
     text-decoration:none;
-    color:black;
+    color:black;  
     margin:10px;
 }
 #fooster a:hover{
-    color:#ffffff;
+    color:#CE7D35;
+}
+#fooster a{
+    color: white;
 }
 /*imagenes del header */
 
@@ -381,17 +385,17 @@ color:#2f2d2e;
 }
 
 #logo img{
-    height: 140px;
-    width: 400px;
+    width:80%;
+    max-height: 160px;
+    max-width: 450px;
     padding: 2px;
     border-radius: 3px;
-    float: left;
     border: solid 0.5px black;
-    box-shadow: 0 0 4px 1.5px  #B64F3A;
+    box-shadow: 1px, 1px, 1px;
 }
 
 #CuentaUser{
-     font: oblique bold 100% cursive;
+    font: oblique bold 100% cursive;
     color:#2f2d2e;
     width:20%;
     border: solid 0.5px black;
@@ -400,34 +404,31 @@ color:#2f2d2e;
     border-radius: 3px;
     text-align: center;
     border-radius: 4px;
-    background-color: #e8f1f2;
+    background-color: #E6DDC4;
     margin-right: 1px;
-
 }
 #CuentaUser ul {
     list-style: none;
     text-decoration: none;
 }
 #CuentaUser img {
-    height: 60px;
-    width: 60px;    
+    max-height: 60px;
+    max-width: 60px;    
 }
-
 #CuentaUser li a{
     color: inherit;
     transition: all .3s;
 }
-
 #CuentaUser li a:hover{
-	color: #CE7D35;
-	transition: all .3s;
+    color: #CE7D35;
+    transition: all .3s;
 }
-
 /* ventana flotante */
 
 .flotante{
 
-    background-color: #4e4b4b;
+    background-color: #1f2641;
+    opacity: 4;
     color: #e6dddd;
     width: 38%;
     padding: 20px;
@@ -438,8 +439,7 @@ color:#2f2d2e;
     top: 32%;
     display: none;
     padding: 50px;
-min-width:500px;
-    
+    border: 5px solid wheat;
 }
 
 #contenedor-gris{
@@ -482,30 +482,31 @@ border-radius: 5px;
 width:93%;
 margin-left: 5%;
 margin-right: 5%;
-background:#006494;
+background:#678983;
 border-radius: 10px;
 }
 
 #imgproducto{
-    display:flex;
+   display:flex;
    font: oblique bold 100% cursive;
    color:white;
 }
 
 #imgproducto img{
-    border-right:solid 3px #2f2d2e;
     margin:2%;
-    border-radius: 10px;
+    border-radius: 5px;
     min-width: 250px;
     max-width: 350px;
+    border: outset;
 }
 
 #tabla {
-    background:#2970ca;
+    background:#678983;
     width:60%;
     min-width:350px;
-    border-radius:10px;
+    border-radius:6px;
     margin:2%;
+    color: black;
 }
 
 #primerafila td{
@@ -568,12 +569,12 @@ font-size:x-small;
 }
 
 #tabla1{
-    background:#2970ca;
+    background:#678983;
     font: oblique bold 100% cursive;
     width:35%;
     margin:5%;
-    border-radius:10px;
-    color:white;
+    border-radius:6px;
+    color:black;
 }
 
 #tabla1 th{
@@ -586,11 +587,11 @@ font-size:x-small;
 
 #tabla2{
     font: oblique bold 100% cursive;
-    background:#2970ca;
+    background:#678983;
     width:55%;
     margin:5%;
-    border-radius:10px;
-    color:white;
+    border-radius:6px;
+    color:black;
 }
 
 #tabla2 th{
@@ -603,12 +604,12 @@ font-size:x-small;
 }
 
 #tabla3{
-    color:white;
+    color:black;
     font: oblique bold 100% cursive;
     width:93%;
     margin:5%;
-    background: #2970ca;
-    border-radius: 10px;
+    background: #678983;
+    border-radius: 6px;
 }
 
 #tabla3 th{

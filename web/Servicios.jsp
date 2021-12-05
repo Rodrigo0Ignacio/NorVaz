@@ -78,7 +78,6 @@
                         <li><a href="javascript:abrir()"> olvidaste tu contraseña</a></li>
                     </ul>
                 </div>
-
             </div>
 
             <div id="nav2" <%= estiloU%>  >
@@ -220,10 +219,10 @@
 
                     <div id="detallesservicio">
                         <ul>
-                            <li>Servicio de Reparacion: <a>
+                            <li>Servicio de Reparacion: <p>
                                     tenemos los mejores profecionales en carpinteria para
                                     realizar todo tipo de repaciones a tus muebles favoritos.
-                                </a></li>
+                                </p></li>
 
 
                         </ul>

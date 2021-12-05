@@ -8,12 +8,12 @@
     text-decoration: none;
 }
 body{
-    background-color: #13293d;
+    background-color: #F0E9D2;
 }
 
 .flotante{
-
-    background-color: #4e4b4b;
+    background-color: #1f2641;
+    opacity: 4;
     color: #e6dddd;
     width: 38%;
     padding: 20px;
@@ -24,6 +24,7 @@ body{
     top: 32%;
     display: none;
     padding: 50px;
+    border: 5px solid wheat;
 }
 
 #contenedor-gris{
@@ -92,7 +93,7 @@ border-radius: 5px;
     padding: 2px;
     border-radius: 3px;
     border: solid 0.5px black;
-    box-shadow: 0 0 4px 1.5px  #B64F3A;
+    box-shadow: 1px, 1px, 1px;
 }
 
 #CuentaUser{
@@ -105,7 +106,7 @@ border-radius: 5px;
     border-radius: 3px;
     text-align: center;
     border-radius: 4px;
-    background-color: #e8f1f2;
+    background-color: #E6DDC4;
     margin-right: 1px;
 }
 #CuentaUser ul {
@@ -173,7 +174,7 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     cursor:pointer;
 }
 #btn-prev:hover, #btn-next:hover{
-    background: rgba(255, 255, 255, 1);
+    background: rgb(8, 204, 90);
 }
 #btn-prev{
     left:10px;
@@ -193,7 +194,7 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
 }
 #contenido label{
     padding-top: 20px;
-    background:#2970ca;
+    background:#929faf;
     cursor: pointer;
     padding-bottom: 19px;
     padding-right: 100px;
@@ -204,7 +205,7 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     border-radius: 3px;
 }
 #contenido label:hover{
-    background:#2f2d2e;
+    background:#181D31;
     opacity: 0.7;
 }
 
@@ -212,20 +213,19 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     display:none; 
 }
 #btn-vendidos:checked ~ .vendidos{
-    background:#006494;
+    background:#678983;
 }
 #btn-comentados:checked ~ #articulos .vendido{
     display:none;
 }
 #btn-comentados:checked ~ .comentados{
-    background:#006494;
+    background:#678983;
 }
 
 #articulos {
-    border-top: solid 3px #2f2d2e;
     padding-top:10px;
-    background-color:#006494;
-    box-shadow: 5px 10px 8px #2970ca;
+    background-color:#678983;
+    box-shadow: 1px 1px 1px;
     border-radius: 10px;
 }
 
@@ -233,9 +233,9 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
 .producto{
     display:inline-block;
     width:23%;
-    background: #2970ca;
-    border: solid 0.5px black;
-    border-radius: 10px;
+    background: #E6DDC4;
+    border: outset 0.5px black;
+    border-radius: 5px;
     margin: 10px;
     font: oblique bold 100% cursive;
 
@@ -251,7 +251,7 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
     border-radius:5px;
 }
 #Boton button{
-    height: 50px;
+    height: 5%;
     width: 50%;
     font-size: 15px;
     left: 25%;
@@ -263,7 +263,7 @@ aqui podijugar con los tamaños de todos los slider segun el contenido*/
 }
 
 #Boton button:hover{
-background: #2f2d2e;
+background: #181D31;
 color:white;
 opacity: 1;
 }
@@ -291,9 +291,9 @@ opacity: 1;
     width:100%;
     max-height: 80px;
     display:block;
-    background: #2f2d2e;
+    background: #181D31;
     border:black 0.5px solid;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 3px 8px 8px #888888;
     border-radius: 5px;
     font: oblique bold 100% cursive;
 }
@@ -305,9 +305,9 @@ opacity: 1;
     margin-left: auto;
     margin-right: auto;
     display:block;
-    background: #2f2d2e;
+    background: #181D31;
     border:black 0.5px solid;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 5px 8px 8px #888888;
     border-radius: 5px;
 }
 .navegacion ul{
@@ -347,10 +347,10 @@ opacity: 1;
     text-decoration: none;
 }
 .menu li:hover {
-    background:rgba(0,0,0,0.3)
+    background: #181D31;
 }
 .menu2 li:hover {
-    background:rgba(0,0,0,0.3)
+    background:#181D31;
 }
 .menu li a:hover{
     color: #CE7D35;
@@ -387,23 +387,23 @@ opacity: 1;
     font: oblique bold 100% cursive;
     color:#e8f1f2;
     display:flex;
-    background: #006494;
+    background: #678983;
     padding-top: 5px;
     margin: 10px;
     border: solid 0.5px black;
-    border-radius: 10px;
-    box-shadow: 5px 10px 8px #888888;
+    border-radius: 8px;
+    box-shadow: 5px 5px 8px #888888;
 }
 /*imagen del producto descripcion y boton*/
 #imagenservicio{
-    width:30%;
+    width:25%;
 }
 #imagenservicio img{
     height: 180px;
-max-width: 230px;
-    border: solid 0.5px;
+    max-width: 230px;
+    border: outset 0.5px;
     margin: 2px;
-    border-radius: 10px;
+    border-radius: 4px;  
 }
 #Botonservicio{
     text-align: center;
@@ -414,8 +414,8 @@ max-width: 230px;
 }
 #Botonservicio button{
     font: oblique bold 100% cursive;
-    height: 50px;
-    width: 100px;
+    height: 100px;
+    width: 150px;
     font-size: 18px;
     
 }
@@ -432,7 +432,7 @@ max-width: 230px;
 }
 #fooster{
     font: oblique bold 100% cursive;
-    background: #535151;
+    background: #373d58;
     padding: 15px;
     margin: 30px;
     color: #fff;
@@ -452,5 +452,8 @@ max-width: 230px;
     margin:10px;
 }
 #fooster a:hover{
-    color:#ffffff;
+    color:#CE7D35;
+}
+#fooster a{
+    color: white;
 }
