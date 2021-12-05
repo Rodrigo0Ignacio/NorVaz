@@ -131,9 +131,11 @@ switch (rol){
                         <li><a href="Servicios.jsp">Servicios </a></li>
                         <li><a href="Productos.jsp">Productos </a>
                             <ul class="submenu">
+                                <%if(cProductos != null){%>
                                 <%for (Producto p : cProductos) {%>
 
                                 <li><a href="Servlet_productos?param=<%=p.getCategoria()%>"><%=p.getCategoria()%></a></li>
+                                    <%}%>
                                     <%}%>
                             </ul>
                         </li>

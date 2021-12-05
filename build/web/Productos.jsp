@@ -143,9 +143,11 @@
                         <li><a href="Servicios.jsp">Servicios </a></li>
                         <li><a href="Productos.jsp">Productos </a>
                             <ul class="submenu">
+                                <%if(cProductos != null){%>
                                 <%for (Producto p : cProductos) {%>
 
                                 <li><a href="Servlet_productos?param=<%=p.getCategoria()%>"><%=p.getCategoria()%></a></li>
+                                    <%}%>
                                     <%}%>
                             </ul>
                         </li>
@@ -158,12 +160,14 @@
 
                 <div id="menuproductos">
                     <h1>menu</h1>
+                    <%if(cProductos != null){%>
                     <%for (Producto p : cProductos) {%>
                     <form method="get" action="Servlet_productos">
                         <ul>
                             <li><input type="submit" name="categoria" style="border:0;" value="<%=p.getCategoria()%>"><input type="hidden" name="param" value="<%=p.getCategoria()%>"></li>
                         </ul>
                     </form>
+                    <%}%>
                     <%}%>
                 </div>
 
@@ -198,6 +202,8 @@
 
                     <%}
                     } else {
+
+                        if(productosAll != null){
                         for (Producto p : productosAll) {%>
                     <article class="producto">
 
@@ -221,7 +227,7 @@
                         </div>
                     </article>
                     <%}
-                        }%>
+                        }}%>
                 </div>
 
             </div>

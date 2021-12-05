@@ -25,9 +25,10 @@ public class Conexion {
        try {
             Class.forName("com.mysql.jdbc.Driver");
             
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/norvaz?zeroDateTimeBehavior=convertToNull","root","");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/norvaz","root","");
                 
             } catch (ClassNotFoundException | SQLException ex ) { 
+               /*JOptionPane.showMessageDialog(null,"Error al conectar la BD: "+ex);*/
                errorDesconeccion = true;
             }        
             return con; 
