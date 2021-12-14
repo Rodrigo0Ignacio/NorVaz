@@ -169,7 +169,7 @@ switch (rol){
                                          <td><%=lista.getString(6)%></td>
                                          <td><%=lista.getString(7)%></td>
                                          <td><%=lista.getString(8)%></td>
-                                         <td><a href="servlet_EditarServicio?rut=<%=lista.getString(1)%>">Eliminar</a></td>
+                                         <td><a href="Servlet_EditarServicio?rut=<%=lista.getString(1)%>">Eliminar</a></td>
                                      </tr>  
                                  </tbody>
                                  

@@ -69,7 +69,7 @@ public class Servlet_compra extends HttpServlet {
                 }
             }
             request.setAttribute("error","Su pedido a sido recibido");
-            request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+            request.getRequestDispatcher("Ver_pedido.jsp").forward(request, response);
             
         }else{
            request.setAttribute("error","No se pudo concretar la venta, intentelo mas tarde");

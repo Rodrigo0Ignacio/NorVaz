@@ -60,96 +60,63 @@ public class Servlet_InicioSesion extends HttpServlet {
                 usuario1.setContrasena(contrasena);
 
                 advertencia = valida.RegistrarUsuario(usuario1);
-                response.sendRedirect("InicioSesion.jsp?validador=" + advertencia);
+                if(advertencia==0){
+                    listaErrores.add("0");
+                }
+                if(advertencia==1){
+                    listaErrores.add("1");
+                }
+                request.setAttribute("listaErrores", listaErrores);
+                request.getRequestDispatcher("InicioSesion.jsp").forward(request, response);
+
             }
         }
         
         if (botonIngresar != null) {
 
-                if (usuario == null || contrasenau == null ) {
+            if (usuario == null || contrasenau == null ) {
                     listaErrores.add("La contraseña o el usuario son incorrectos");
                     
                     request.setAttribute("listaErrores", listaErrores);
                     request.getRequestDispatcher("InicioSesion.jsp").forward(request, response);
-                    
-                }
+            }
                
                 
-                if (listaErrores.isEmpty()) {
+            if (listaErrores.isEmpty()) {
 
-                    usuario1.setEmail(usuario);
-                    usuario1.setContrasena(contrasenau);
+                usuario1.setEmail(usuario);
+                usuario1.setContrasena(contrasenau);
 
-                    // llamamos a un metodo para capturar el nombre y el rut
-                    validaRoles.listaRut(usuario1);
+                // llamamos a un metodo para capturar el nombre y el rut
+                validaRoles.listaRut(usuario1);
 
-                    int rol = validaRoles.validarUsuarios(usuario1);
+                int rol = validaRoles.validarUsuarios(usuario1);
 
-                    switch (rol) {
-                        case 1:
+                switch (rol) {
+                    case 1:
                             // SESSIONES
-                            sesion.setAttribute("usuario", usuario);
-                            sesion.setAttribute("nombre", usuario1.getNombre());
-                            sesion.setAttribute("rut", usuario1.getRut());
-                            sesion.setAttribute("rol", rol);
-                            response.sendRedirect("index.jsp");
-                            break;
+                        sesion.setAttribute("usuario", usuario);
+                        sesion.setAttribute("nombre", usuario1.getNombre());
+                        sesion.setAttribute("rut", usuario1.getRut());
+                        sesion.setAttribute("rol", rol);
+                        response.sendRedirect("index.jsp");
+                        break;
 
-                        case 2:
-                            sesion.setAttribute("usuario", usuario);
-                            sesion.setAttribute("nombre", usuario1.getNombre());
-                            sesion.setAttribute("rut", usuario1.getRut());
-                            sesion.setAttribute("rol", rol);
-                            response.sendRedirect("index.jsp");
-                            break;
+                    case 2:
+                        sesion.setAttribute("usuario", usuario);
+                        sesion.setAttribute("nombre", usuario1.getNombre());
+                        sesion.setAttribute("rut", usuario1.getRut());
+                        sesion.setAttribute("rol", rol);
+                        response.sendRedirect("index.jsp");
+                        break;
 
-                        default:
-                            listaErrores.add("Usuario no encontrado");
-                           
-
-                    }
-                    
-                }
+                    default:
+                        listaErrores.add("3");
+                        request.setAttribute("listaErrores", listaErrores);
+                        request.getRequestDispatcher("InicioSesion.jsp").forward(request, response);
+                }    
             }
-      
-
-        
-      
-        
-      
-        
-        
-        
- 
-        
-        
-       
-       
-                
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

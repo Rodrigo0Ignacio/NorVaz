@@ -150,7 +150,7 @@ switch (rol){
         <div id="contenido">
             <div class="InisiarSesion">
                 <!--AL PRECIONAR EL BOTON LA PAGINA NO ENCUESTRA EL SERVBLET-->
-                <form name="agregarDireccion" action="/Servlet_EditarDireccion" method="post"  onsubmit=" return validarSalida()">   
+                <form name="agregarDireccion" action="Servlet_EditarDireccion" method="post"  onsubmit=" return validarSalida()">   
                     <h3>Ingresar direccion</h3>
                     <table>
                         <tr><td></td><td></td></tr>

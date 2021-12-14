@@ -27,18 +27,18 @@ public class Servlet_servicio extends HttpServlet {
             Crear_Servicio creaServicio = new Crear_Servicio();
             Email correo = new Email();
             Servicio servi = new Servicio();
-            int telefono = 0;
             String notificaCorreo = null;
 
             // capturamos los datos del formulario
             String rut = request.getParameter("rut");
-            String servicio = request.getParameter("op_servicios");
+            String servicio = request.getParameter("opservicios");
             String poblacionVilla = request.getParameter("txt_poblacion_villa");
-            String calle = request.getParameter("txt_calle");
+            String calle = request.getParameter("txt_calle2");
             String nCasaDepartamento = request.getParameter("txt_NCasa");
             String descripcion = request.getParameter("textA_requerimiento");
             String emailReceptor = request.getParameter("email");
             String botonSolicitar = request.getParameter("btn_solicitar");
+            String telefono = request.getParameter("txt_telefono");
         
             
             // datos de correo
@@ -46,64 +46,27 @@ public class Servlet_servicio extends HttpServlet {
             String mensaje = "en un periodo maximo de 10 hrs, nos contactaremos con contigo";
 
             if (botonSolicitar != null) {
-
-                if (poblacionVilla == null) {
-                    listaErrores.add("Poblacion o villa es obligatorio");
-
-                }
-                if (calle == null) {
-                    listaErrores.add("Calle es obligatorio");
-
-                }
-                if (nCasaDepartamento == null) {
-                    listaErrores.add("N° de casa o deto, es obligatorio");
-
-                }
-                if (request.getParameter("txt_telefono") == null) {
-                    listaErrores.add("Telefono es obligatorio");
-
-                }
-                // validamos que sea un numero de telefono, es decir un numero entero
-                try {
-                    telefono = Integer.parseInt(request.getParameter("txt_telefono"));
-                } catch (NumberFormatException e) {
-                    listaErrores.add("Solo se admiten valores numericos");
-                }
-                if (descripcion == null) {
-                    listaErrores.add("es oblogatorio ingresar una descripcion");
-
-                }
-                if (listaErrores.isEmpty()) {
-
-                    // pasamos el telefono a string
-                    String cell = String.valueOf(telefono);
-
+                
                     servi.setRut(rut);
                     servi.setTipo(servicio);
                     servi.setPoblacion(poblacionVilla);
                     servi.setCalle(calle);
                     servi.setNroHome(nCasaDepartamento);
-                    servi.setTelefono(cell);
+                    servi.setTelefono(telefono);
                     servi.setDescripcion(descripcion);
 
-                    creaServicio.registrarServicio(servi);
+                    if(creaServicio.registrarServicio(servi) == 0){
+                        response.sendRedirect("usuario-servicios.jsp?value=0");
+                    }else{
+                         response.sendRedirect("usuario-servicios.jsp?value=1");
+                    }
                     
                     // enviamos el correo de confirmacion
-                    notificaCorreo = correo.EnviarEmail(emailReceptor,asunto,mensaje);
+                  //  notificaCorreo = correo.EnviarEmail(emailReceptor,asunto,mensaje);
 
-                    response.sendRedirect("usuario-servicios.jsp");
-
-                } else{
                     
-                    response.sendRedirect("usuario-servicios?error.jsp");
-                }
 
             }
-
-
-            
-            
-            
         }
     }
 

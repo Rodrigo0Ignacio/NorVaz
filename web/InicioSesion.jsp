@@ -210,6 +210,19 @@ switch (rol){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js%22%3E"></script>
     <script src="js/rutValidador.js"></script>
     
+    <% if(!listaErrores.isEmpty()){
+    if(listaErrores.get(0)=="3"){%>
+    <script>alertify.alert("Error","usuario o contraseña incorrecto").set('label','ok');</script>
+    <% 
+    }
+    if(listaErrores.get(0)=="0"){%>
+    <script>alertify.alert("Error","el usuario no se registro compruebe su email o rut").set('label','ok');</script>
+    <%
+    }
+    if(listaErrores.get(0)=="1"){%>
+    <script>alertify.alert("registro","Usuario registrado exitosamente").set('label','ok');</script>
+    <%}%>
+    <%}%>
     
 
    

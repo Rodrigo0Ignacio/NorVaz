@@ -41,6 +41,7 @@ function validarDatos(){
             }
             
             if(document.registro.txt_regisContrasena.value.length>7){
+                
             if(document.registro.txt_regisContrasena.value == document.registro.txt_regisConfirmaContrasena.value){
                  return true;
             } else{
@@ -48,7 +49,7 @@ function validarDatos(){
                  return false;
             }
             }else{
-                alertify.alert("Error","ingrese una contraseña es requerido").set('label','ok');
+                alertify.alert("Error","la contraseña debe tener 8 caracteres minimo").set('label','ok');
             return false;}
      
               

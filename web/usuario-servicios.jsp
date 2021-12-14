@@ -49,7 +49,6 @@
         switch (capturaServicio) {
             case "1":
                 opcion1 = "selected";
-
                 break;
 
             case "2":
@@ -178,14 +177,13 @@
                     <h2>Ingresar un Servicio</h2>
                     <form name="solitar_Servicio" action="servlet_servicio" method="get" onsubmit=" return validaServicio()">
                         <table>
-                                <tr><td><br></td><td></td></tr>
                                 <tr><td><br><h3>Servicio</h3></td><td>
 
-                                        <select name="op_servicios">
-                                            <option <%=opcion1%>>Servicio de Gafiteria</option>
-                                            <option <%=opcion2%>>Mantenimiento</option>
-                                            <option <%=opcion3%>>Servicios de Pintura</option>
-                                            <option <%=opcion4%>>Servicio de Reparacion</option> 
+                                        <select name="opservicios">
+                                            <option <%=opcion1%> value="Servicio de Gafiteria">Servicio de Gafiteria</option>
+                                            <option <%=opcion2%> value="Mantenimiento">Mantenimiento</option>
+                                            <option <%=opcion3%> value="Servicios de Pintura">Servicios de Pintura</option>
+                                            <option <%=opcion4%> value="Servicio de Reparacion">Servicio de Reparacion</option> 
                                         </select>
 
                                     </td></tr>

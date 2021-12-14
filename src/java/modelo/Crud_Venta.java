@@ -47,6 +47,8 @@ public class Crud_Venta extends Conexion{
             super.st = (Statement) conectar().createStatement();
             st.executeUpdate(query);
 
+            st.close();
+            desconectar();
         } catch (SQLException ex) {
             return 0;
 

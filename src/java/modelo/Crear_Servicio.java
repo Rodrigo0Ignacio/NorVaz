@@ -24,7 +24,7 @@ public class Crear_Servicio extends Conexion{
             super.resultado = st.executeUpdate(query);
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Error al ingresar un servicio");
+           return 0;
         }
         
         //desconectar();
