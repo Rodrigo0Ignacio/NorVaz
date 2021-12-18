@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Crud_Venta;
+import modelo.Email;
 
 /**
  *
@@ -21,15 +22,6 @@ import modelo.Crud_Venta;
 @WebServlet(name = "Servlet_EditarVenta", urlPatterns = {"/Servlet_EditarVenta"})
 public class Servlet_EditarVenta extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -43,13 +35,22 @@ public class Servlet_EditarVenta extends HttpServlet {
         String btn_detallesVenta = request.getParameter("detalles");
         
         
+        Email email = new Email();
+        String asunto = "Norvaz - estado productos";
+        String contenido = "tu orden a sido "+estado+" en los proximos minutos resiviras mas informacion";
+        
+        String correo = crud.listarEmail(rut);
+        
+        
         if(btn_editar != null){
             crud.CambiarEstado(id, estado);
-            response.sendRedirect("ver-estado.jsp");
+            email.EnviarEmail(correo, asunto, contenido);
+            
+            response.sendRedirect("ver-estado.jsp?estado="+estado);
         }
         if(btn_eliminar != null){
             crud.EliminarEstado(rut, id);
-            response.sendRedirect("ver-estado.jsp");
+            response.sendRedirect("ver-estado.jsp?elimanr=true");
         }
         if(btn_detallesVenta != null){
           response.sendRedirect("DetallesDeVenta.jsp?dato="+id);

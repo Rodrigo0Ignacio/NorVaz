@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Rodrigo/Documents/NetBeansProjects/NorVaz/src/java/controlador/Servlet_InicioSesion.java</file>
-            <file>file:/E:/Rodrigo/Documents/NetBeansProjects/NorVaz/src/java/modelo/Crear_Usuario.java</file>
-            <file>file:/E:/Rodrigo/Documents/NetBeansProjects/NorVaz/web/js/Metodos.js</file>
-            <file>file:/E:/Rodrigo/Documents/NetBeansProjects/NorVaz/web/usuario-servicios.jsp</file>
-            <file>file:/E:/Rodrigo/Documents/NetBeansProjects/NorVaz/web/InicioSesion.jsp</file>
+            <file>file:/E:/Rodrigo/Documents/NetBeansProjects/NorVaz/src/java/controlador/Servlet_EditarDireccion.java</file>
+            <file>file:/E:/Rodrigo/Documents/NetBeansProjects/NorVaz/web/agregar-direccion.jsp</file>
         </group>
     </open-files>
 </project-private>

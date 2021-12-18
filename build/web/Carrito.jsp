@@ -141,6 +141,7 @@
             <form action="Servlet_compra" method="post">
                 <div id="formulario">
                     <input id="venta" type="submit" value="Realizar Pedido">
+                    <input type="hidden" value="<%=rut%>" name="rut">
                     <h1 id="preciototal">precio total :</h1><input id="total" type="text" name="total" readonly="true">
                 </div>
                 <div id="contenido">

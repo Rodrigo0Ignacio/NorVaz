@@ -31,6 +31,8 @@ Leer_Servicios servicios = new Leer_Servicios();
 
 ResultSet lista = servicios.listarDatosUsuario();
 
+String value = (String) request.getParameter("value");
+
 
 switch (rol){
     case "1":
@@ -57,6 +59,8 @@ switch (rol){
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <link href="css/listar-servicios.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="img/martillo.png">
         <script>
             $(document).ready(function() {
@@ -203,4 +207,16 @@ switch (rol){
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <script src="js/Metodos.js" type="text/javascript"></script>
+       <!--solicitud de servicio-->
+    <script>
+    var mensaje = "<%=value%>";
+    
+    if(mensaje == "true"){
+         alertify.alert("Exitoso","El registro se elimino exitosamente").set('label','ok');
+    }if(mensaje == "false"){
+    alertify.alert("Error","Error al eliminar un registro").set('label','ok');
+    }
+    </script>
 </html>

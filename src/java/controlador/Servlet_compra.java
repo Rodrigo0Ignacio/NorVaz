@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Crud_Producto;
+import modelo.Crud_Venta;
+import modelo.Email;
 
 /**
  *
@@ -19,23 +21,26 @@ import modelo.Crud_Producto;
 @WebServlet(name = "Servlet_compra", urlPatterns = {"/Servlet_compra"})
 public class Servlet_compra extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if(request.getSession().getAttribute("rut")==null){
             request.setAttribute("error","Debe iniciar sesion para realizar un pedido");
             request.getRequestDispatcher("Carrito.jsp").forward(request, response);
         }
+        String pedido =  request.getParameter("Realizar Pedido");
+        String rut =  request.getParameter("rut");
+        Crud_Venta crud = new Crud_Venta();
+        Email email = new Email();
+        String asunto = "NorVaz - datos de transferencia";
+        String contenido = "tiene un plaso de 24 horas para realizar la transferencia";
+        String correo = crud.listarEmail(rut);
+        
+        
+        
         /*si el boton realizar pedido contiene elementos entrara*/
         if(request.getSession().getAttribute("carrito")!= null){
+            
         Crud_Producto conex=new Crud_Producto();
         
         ArrayList<Producto> carrito=(ArrayList) request.getSession().getAttribute("carrito");
@@ -66,12 +71,18 @@ public class Servlet_compra extends HttpServlet {
                     request.getRequestDispatcher("Carrito.jsp").forward(request, response);
                 }
             }
+            /*
             request.setAttribute("error","Su pedido a sido recibido");
             request.getRequestDispatcher("Ver_pedido.jsp").forward(request, response);
-            
+            */
+            email.EnviarEmail(correo, asunto, contenido);
+            response.sendRedirect("Ver_pedido.jsp?value=true");
         }else{
+            /*
            request.setAttribute("error","No se pudo concretar la venta, intentelo mas tarde");
                     request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+            */
+            response.sendRedirect("Ver_pedido.jsp?value=false");
         }
         }else{
             response.sendRedirect("Carrito.jsp?value=none");

@@ -131,9 +131,9 @@ public class Servlet_EditarProductos extends HttpServlet {
                 producto1.setUrl(imagen);
                 
                 if(actualizar.ActualizarProducto(producto1) == 1){
-                    response.sendRedirect("editarProducto.jsp?value=true");
+                    response.sendRedirect("editarProducto.jsp?value1=true");
                 }else{
-                     response.sendRedirect("editarProducto.jsp?value=false");
+                     response.sendRedirect("editarProducto.jsp?value1=false");
                 }  
             }else{
                 request.setAttribute("listaErrores", listaErrores);

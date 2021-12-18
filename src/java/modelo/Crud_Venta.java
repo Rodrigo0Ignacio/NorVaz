@@ -77,6 +77,25 @@ public class Crud_Venta extends Conexion{
         return rs;
 
 }
+    public String listarEmail(String rut) {
+        String email = null;
+        try {
+            super.query = "select email from usuario WHERE rut = '" + rut + "'";
+
+            super.st = (Statement) conectar().createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                email = rs.getString("email");
+
+            }
+
+        } catch (SQLException ex) {
+            return null;
+
+        }
+        return email;
+
+}
      
     
     

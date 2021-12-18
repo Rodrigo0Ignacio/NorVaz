@@ -27,6 +27,7 @@
         nombre = sesion.getAttribute("nombre").toString();
         rut = sesion.getAttribute("rut").toString();
     }
+    String estado = (String) request.getParameter("value");
 
 // CIERRA UNA SESION
     if (request.getParameter("cerrar") != null) {
@@ -58,6 +59,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/carrito-estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="img/martillo.png">
         <title>NorVaz</title>
         <script src="js/jquery-3.5.1.min.js"></script>
@@ -196,4 +199,15 @@
 
     </body>
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+     <script>
+    var mensaje = "<%=estado%>";
+    
+    if(mensaje == "true"){
+    alertify.alert("Exito","El pedido se realizo exitosamente.<br/>se le enviaran los datos a su correo para relizar el pago. ").set('label','ok');
+    }if(mensaje == "false"){
+    alertify.alert("Error","Error al realizar el pedido. intente mas tarde").set('label','ok');
+    }
+    </script>
+    
 </html>

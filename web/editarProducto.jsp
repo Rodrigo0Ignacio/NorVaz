@@ -14,6 +14,8 @@
     String estiloA = null;
     String sesionIniciada = null;
     String sinSesion = null;
+    String value = (String) request.getParameter("value");
+    String value1 = (String) request.getParameter("value1");
 
 Crud_Producto product = new Crud_Producto();
 ArrayList<Producto> cProductos = product.ListarCategoria();
@@ -248,4 +250,20 @@ ArrayList<Producto> cProductos = product.ListarCategoria();
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
+     <script>
+    var mensaje = "<%=value%>";
+    var mensaje1 = "<%=value1%>";
+    
+    if(mensaje == "true"){
+        alertify.alert("Exito","El producto se elimino exitosamente").set('label','ok');
+    }if(mensaje == "false"){
+        alertify.alert("Exito","Error al eliminar el producto").set('label','ok');
+    }
+     
+    if(mensaje1 == "true"){
+        alertify.alert("Exito","Modificacion exitosa").set('label','ok');
+    }if(mensaje1 == "false"){
+        alertify.alert("Exito","Error al modificar el producto").set('label','ok');
+    }
+    </script>
 </html>

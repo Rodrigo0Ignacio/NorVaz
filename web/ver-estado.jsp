@@ -20,6 +20,10 @@
 
     Crud_Producto product = new Crud_Producto();
     ArrayList<Producto> cProductos = product.ListarCategoria();
+    
+    String editar = (String) request.getParameter("editar");
+    String eliminar = (String) request.getParameter("elimanr");
+    String estado = (String) request.getParameter("estado");
 
 //LISTAR VENTAS
     Crud_Venta listaVenta = new Crud_Venta();
@@ -56,6 +60,8 @@
         <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <link href="alertifyjs/css/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="img/martillo.png">
 
         <script>
@@ -212,4 +218,30 @@
     </body>
     <!--JS DE VETANA FLOTANTE-->
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
+    
+    <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
+    <script src="js/Metodos.js" type="text/javascript"></script>
+    
+    <script>
+    var editar = "<%=editar%>";
+    var estado = "<%=estado%>";
+    var eliminar = "<%=eliminar%>";
+    
+    if(eliminar == "true"){
+        alertify.alert("Exitoso","El registro se elimino exitosamente").set('label','ok');
+    }
+    if(editar == "true"){
+        alertify.alert("Exitoso","El registro se edito exitosamente").set('label','ok');
+    }
+    
+    if(estado == "Aceptada"){
+        alertify.alert("Exitoso","El pedido se acepto").set('label','ok');
+    }
+    if(estado == "Rechazada"){
+         alertify.alert("Exitoso","El pedido se rechazo").set('label','ok');
+    }
+    
+    
+
+    </script>
 </html>
