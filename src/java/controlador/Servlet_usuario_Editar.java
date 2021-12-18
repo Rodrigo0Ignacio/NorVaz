@@ -44,24 +44,6 @@ public class Servlet_usuario_Editar extends HttpServlet {
         // cambiar contraseña
         if (restablecerPass != null) {
 
-            if (contrasena1 == null) {
-                listaErrores.add("el campo contraseña esta vacio");
-            }
-            if (contrasena2 == null) {
-                listaErrores.add("el campo repita su contraseña esta vacio ");
-            }
-            if (contrasena1.equalsIgnoreCase("") || contrasena2.equalsIgnoreCase("")) {
-                listaErrores.add("la contraseña es obligatoria");
-            }
-
-            if (!contrasena1.equalsIgnoreCase(contrasena2)) {
-                listaErrores.add("Las contraseñas no coincide");
-
-            }
-            // enviamos los errores
-            request.setAttribute("listaErrores", listaErrores);
-            request.getRequestDispatcher("usuario-Editar.jsp").forward(request, response);
-
             if (listaErrores.isEmpty()) {
                 // pasamos los datos al beans
                 usuario1.setContrasena(contrasena1);
@@ -71,14 +53,10 @@ public class Servlet_usuario_Editar extends HttpServlet {
                 verifica = actualiza.actualizarPassword(usuario1);
 
                 if (verifica == 1) {
-                    mensaje = "La contraseña se cambio exitosamente.";
+                   response.sendRedirect("usuario-Editar.jsp?value=1");
 
-                    request.setAttribute("mensaje", mensaje);
-                    request.getRequestDispatcher("usuario-Editar.jsp").forward(request, response);
                 } else {
-                    mensaje = "Error al cambiar";
-                    request.setAttribute("mensaje", mensaje);
-                    request.getRequestDispatcher("usuario-Editar.jsp").forward(request, response);
+                    response.sendRedirect("usuario-Editar.jsp?value=0");
                 }
 
             }
@@ -127,19 +105,15 @@ public class Servlet_usuario_Editar extends HttpServlet {
                 verifica = actualiza.ActualizarDatos(usuario1);
                 
                 if (verifica == 1) {
-                    mensaje = "La contraseña se cambio exitosamente.";
-
-                    request.setAttribute("mensaje", mensaje);
-                    request.getRequestDispatcher("usuario-Editar.jsp").forward(request, response);
+                    response.sendRedirect("usuario-Editar.jsp?verifica=1");
+                   
                 } else {
-                    mensaje = "Error al cambiar";
-                    request.setAttribute("mensaje", mensaje);
-                    request.getRequestDispatcher("usuario-Editar.jsp").forward(request, response);
+                  response.sendRedirect("usuario-Editar.jsp?verifica=0");
+                    
 
                     /* codigo de metodos*/
                 }
-                request.setAttribute("listaErrores", listaErrores);
-                request.getRequestDispatcher("usuario-Editar.jsp").forward(request, response);
+               
 
             }
         }

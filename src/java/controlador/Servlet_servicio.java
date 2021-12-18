@@ -43,10 +43,10 @@ public class Servlet_servicio extends HttpServlet {
             
             // datos de correo
             String asunto = "Solicitud de Servicio recibida";
-            String mensaje = "en un periodo maximo de 10 hrs, nos contactaremos con contigo";
+            String mensaje = "en un periodo maximo de 10 hrs, nos contactaremos con usted";
 
             if (botonSolicitar != null) {
-                
+          
                     servi.setRut(rut);
                     servi.setTipo(servicio);
                     servi.setPoblacion(poblacionVilla);
@@ -58,17 +58,15 @@ public class Servlet_servicio extends HttpServlet {
                     if(creaServicio.registrarServicio(servi) == 0){
                         response.sendRedirect("usuario-servicios.jsp?value=0");
                     }else{
+                        notificaCorreo = correo.EnviarEmail(emailReceptor,asunto,mensaje);
                          response.sendRedirect("usuario-servicios.jsp?value=1");
+                         
                     }
-                    
-                    // enviamos el correo de confirmacion
-                  //  notificaCorreo = correo.EnviarEmail(emailReceptor,asunto,mensaje);
-
-                    
 
             }
+            }
         }
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

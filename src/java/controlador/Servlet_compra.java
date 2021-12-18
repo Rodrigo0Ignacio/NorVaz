@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controlador;
 
 import Entidad.Producto;
@@ -38,6 +34,8 @@ public class Servlet_compra extends HttpServlet {
             request.setAttribute("error","Debe iniciar sesion para realizar un pedido");
             request.getRequestDispatcher("Carrito.jsp").forward(request, response);
         }
+        /*si el boton realizar pedido contiene elementos entrara*/
+        if(request.getSession().getAttribute("carrito")!= null){
         Crud_Producto conex=new Crud_Producto();
         
         ArrayList<Producto> carrito=(ArrayList) request.getSession().getAttribute("carrito");
@@ -74,6 +72,9 @@ public class Servlet_compra extends HttpServlet {
         }else{
            request.setAttribute("error","No se pudo concretar la venta, intentelo mas tarde");
                     request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+        }
+        }else{
+            response.sendRedirect("Carrito.jsp?value=none");
         }
         
         response.setContentType("text/html;charset=UTF-8");

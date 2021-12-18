@@ -24,6 +24,7 @@ if(sesion.getAttribute("rol") != null && sesion.getAttribute("usuario") != null 
     usuario = sesion.getAttribute("usuario").toString();
     nombre = sesion.getAttribute("nombre").toString();
 }
+String validar = request.getParameter("value");
 
 switch (rol){
     case "1":
@@ -189,4 +190,13 @@ switch (rol){
     <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js%22%3E"></script>
     <script src="js/rutValidador.js"></script>
+     <script>
+    var mensaje = "<%=validar%>";
+
+    if(mensaje == 1){
+         alertify.alert("Exitoso","Se a agregado un admistrador correctamente").set('label','ok');
+    }if(mensaje == 0){
+    alertify.alert("Error","Error al agregar administrador").set('label','ok');
+    }
+    </script>
 </html>

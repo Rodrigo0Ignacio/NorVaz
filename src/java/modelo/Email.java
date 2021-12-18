@@ -15,8 +15,8 @@ import javax.mail.internet.MimeMessage;
 public class Email {
     
     // DATOS DEL CORREO REMITENTE
-    private String correoRemitente = "norvazsancarlos@gmail.com";
-    private String passwordRemitente = "norvaz2021";
+    private final String correoRemitente = "norvazsancarlos@gmail.com";
+    private final String passwordRemitente = "norvaz2021";
 
     private String asunto = null;
     private String contenido = null;

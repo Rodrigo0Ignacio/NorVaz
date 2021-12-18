@@ -54,7 +54,7 @@ public class Servlet_EditarProductos extends HttpServlet {
                 ArrayList<Producto> lista = listar.listarDatos(buscarId);
 
                 boolean ocultarForm = true;
-
+                
                 request.setAttribute("lista", lista);
                 request.setAttribute("ocultarForm", ocultarForm);
                 request.getRequestDispatcher("editarProducto.jsp").forward(request, response);

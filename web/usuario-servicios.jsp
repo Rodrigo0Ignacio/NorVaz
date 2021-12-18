@@ -41,6 +41,8 @@
     if (usuario == null) {
         response.sendRedirect("advertencia.jsp");
     }
+    
+    String mensaje = (String) request.getParameter("value");
 
     // CAPTURA LA VARIABLE DE ACUERDO AL SERVICIO Y SELECCCIONA EL SERVICIO
     if (request.getParameter("servicio") != null) {
@@ -203,8 +205,7 @@
                                 <tr><td></td><td><input type="hidden" value="<%=rut%>" name="rut"></td></tr>
                                 <tr><td></td><td><input type="hidden" value="<%=usuario%>" name="email"></td></tr>
                                 <tr><td></td><td> <input type="submit" name="btn_solicitar" value="Solicitar Servicio"> </td></tr>
-                                
-                               
+                                  
                         </table>
                     </form>
 
@@ -240,4 +241,14 @@
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
+    
+    <!--solicitud de servicio-->
+    <script>
+    var mensaje = "<%=mensaje%>";
+    if(mensaje == 1){
+         alertify.alert("Exitoso","Solicitud enviada").set('label','ok');
+    }if(mensaje == 0){
+    alertify.alert("Error","Error al enviar solicitud").set('label','ok');
+    } 
+    </script>
 </html>

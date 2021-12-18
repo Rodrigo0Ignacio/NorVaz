@@ -61,26 +61,26 @@ public class Servlet_InicioSesion extends HttpServlet {
 
                 advertencia = valida.RegistrarUsuario(usuario1);
                 if(advertencia==0){
-                    listaErrores.add("0");
+                    response.sendRedirect("InicioSesion.jsp?vali=0");
                 }
                 if(advertencia==1){
-                    listaErrores.add("1");
+                   response.sendRedirect("InicioSesion.jsp?vali=1");
                 }
-                request.setAttribute("listaErrores", listaErrores);
-                request.getRequestDispatcher("InicioSesion.jsp").forward(request, response);
+
+                
 
             }
         }
         
         if (botonIngresar != null) {
-
+/*
             if (usuario == null || contrasenau == null ) {
                     listaErrores.add("La contraseña o el usuario son incorrectos");
                     
                     request.setAttribute("listaErrores", listaErrores);
                     request.getRequestDispatcher("InicioSesion.jsp").forward(request, response);
             }
-               
+   */            
                 
             if (listaErrores.isEmpty()) {
 
@@ -111,9 +111,7 @@ public class Servlet_InicioSesion extends HttpServlet {
                         break;
 
                     default:
-                        listaErrores.add("3");
-                        request.setAttribute("listaErrores", listaErrores);
-                        request.getRequestDispatcher("InicioSesion.jsp").forward(request, response);
+                        response.sendRedirect("InicioSesion.jsp?error=2");
                 }    
             }
         }

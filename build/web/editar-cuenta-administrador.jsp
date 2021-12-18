@@ -32,6 +32,7 @@ String formBuscarCUenta = null;
 if(request.getAttribute("ocultarForm") != null){
     formBuscarCUenta = "style=\"display: none\"";
 }
+String validador = (String) request.getParameter("value");
 
 
 switch (rol){
@@ -221,5 +222,14 @@ switch (rol){
     <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js%22%3E"></script>
     <script src="js/rutValidador.js"></script>
+         <script>
+    var mensaje = "<%=validador%>";
+
+    if(mensaje == "true"){
+         alertify.alert("Exitoso","Datos modificados exitosamente").set('label','ok');
+    }if(mensaje == "false"){
+    alertify.alert("Error","Error error al modificar datos").set('label','ok');
+    }
+    </script>
     
 </html>

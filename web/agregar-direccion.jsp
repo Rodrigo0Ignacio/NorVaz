@@ -45,6 +45,8 @@ if(usuario == null){
 // lista errores
 ArrayList lista = (ArrayList) request.getAttribute("listaErrores");
 String confirmaCamvio = (String) request.getAttribute("mensaje");
+String valuuee = (String) request.getParameter("value");
+
 
 switch (rol){
     case "1":
@@ -218,5 +220,16 @@ switch (rol){
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
+    <script>
+    var mensaje = "<%=valuuee%>";
+    
+    if(mensaje == "true"){
+    alertify.alert("Exito","se a agregado una direccion").set('label','ok');
+    }
+    if(mensaje == "Aviso"){
+    alertify.alert("Error","ya tienes una direccion agregada").set('label','ok');
+    }
+    
+    </script>
     
 </html>

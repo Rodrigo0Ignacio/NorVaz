@@ -26,6 +26,7 @@ if(sesion.getAttribute("rol") != null && sesion.getAttribute("usuario") != null 
 }
 
 ArrayList listaErrores = (ArrayList) request.getAttribute("listaErrores");
+String value = (String) request.getParameter("value");
 
 switch (rol){
     case "1":
@@ -208,4 +209,29 @@ switch (rol){
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <!--VALIDA FORMULARIO-->
     <script src="js/Metodos.js" type="text/javascript"></script>
+             <script>
+    var mensaje = "<%=value%>";
+
+    if(mensaje == "true"){
+         alertify.alert("Exitoso","Producto agregado exitosamente").set('label','ok');
+    }if(mensaje == "false"){
+   if(!alertify.errorAlert){
+  //define a new errorAlert base on alert
+  alertify.dialog('errorAlert',function factory(){
+    return{
+            build:function(){
+                var errorHeader = '<span class="fa fa-times-circle fa-2x" '
+                +    'style="vertical-align:middle;color:#e10000;">'
+                + '</span> Error';
+                this.setHeader(errorHeader);
+            }
+        };
+    },true,'alert');
+}
+//launch it.
+// since this was transient, we can launch another instance at the same time.
+alertify
+    .errorAlert("Error al agregar un producto: <br/> Este error puede deberse a que el codigo del producto ya se encuentra registrado.");
+    }
+    </script>
 </html>

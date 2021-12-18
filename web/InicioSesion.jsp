@@ -27,6 +27,8 @@ if(sesion.getAttribute("rol") != null && sesion.getAttribute("usuario") != null 
     usuario = sesion.getAttribute("usuario").toString();
     nombre = sesion.getAttribute("nombre").toString();
 }
+String mensaje = (String) request.getParameter("error");
+String vali = (String) request.getParameter("vali");
 
 switch (rol){
     case "1":
@@ -209,20 +211,21 @@ switch (rol){
     <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js%22%3E"></script>
     <script src="js/rutValidador.js"></script>
+    <script>
+    var mensaje = "<%=mensaje%>";
+    var va = "<%=vali%>";
     
-    <% if(!listaErrores.isEmpty()){
-    if(listaErrores.get(0)=="3"){%>
-    <script>alertify.alert("Error","usuario o contraseña incorrecto").set('label','ok');</script>
-    <% 
+    if(mensaje == 2){
+    alertify.alert("Error","Usuario no encontrado").set('label','ok');
+    }if(va == 1){
+        alertify.alert("Exito","Usuario registrado exitosamente").set('label','ok');
+    }if(va == 0){
+        alertify.alert("Error","a ocurrido un error").set('label','ok');
     }
-    if(listaErrores.get(0)=="0"){%>
-    <script>alertify.alert("Error","el usuario no se registro compruebe su email o rut").set('label','ok');</script>
-    <%
-    }
-    if(listaErrores.get(0)=="1"){%>
-    <script>alertify.alert("registro","Usuario registrado exitosamente").set('label','ok');</script>
-    <%}%>
-    <%}%>
+    </script>
+    
+   
+    
     
 
    

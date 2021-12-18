@@ -41,6 +41,8 @@ if(usuario == null){
 // lista errores
 ArrayList lista = (ArrayList) request.getAttribute("listaErrores");
 String confirmaCamvio = (String) request.getAttribute("mensaje");
+String valuu = (String) request.getParameter("value");
+String verifica = (String) request.getParameter("verifica");
 
 switch (rol){
     case "1":
@@ -158,15 +160,7 @@ switch (rol){
                        <tr><td></td><td> <input type="submit" name="btn_restablecer" value="Cambiar"></td></tr>
                        <input type="hidden" name="txt_correo" value="<%=usuario%>" placeholder="<%=usuario%>">    
 
-                       <!--MUESTRA LOS MENSAJES DE ERROR -->
-                       <%if (lista != null) { %>
-                       <%for (int i = 0; i < lista.size(); i++) {%>
-                       <ul>
-                           <tr><td><br></td><td><%=lista.get(i)%></td></tr>
-                       </ul>
 
-                       <% }
-                    }%>
                        <%if (confirmaCamvio != null) {%>
                        <tr><td><br></td><td><%=confirmaCamvio%></td></tr>
                                <%}%>
@@ -226,5 +220,21 @@ switch (rol){
     <script src="js/ventana-flotante.js" type="text/javascript"></script>
     <script src="alertifyjs/alertify.min.js" type="text/javascript"></script>
     <script src="js/Metodos.js" type="text/javascript"></script>
+       <!--solicitud de servicio-->
+    <script>
+    var mensaje = "<%=valuu%>";
+    var verificar = "<%=verifica%>";
+    if(mensaje == 1){
+         alertify.alert("Exitoso","La contraseña se modifico exitosamente").set('label','ok');
+    }if(mensaje == 0){
+    alertify.alert("Error","Error al modificar contraseña").set('label','ok');
+    }if(verificar == 1){
+    alertify.alert("Exitoso","Los datos se modificaron correctamente").set('label','ok');
+    } if(verificar == 0){
+    alertify.alert("Error","Error al modificar los datos").set('label','ok');
+    }  
+    </script>
+    
+    
     
 </html>

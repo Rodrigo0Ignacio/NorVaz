@@ -17,15 +17,9 @@ public class Conexion {
     public int resultado = 0;
     public boolean errorDesconeccion = false;
     /*CONEXION*/
-    private String host = "jdbc:mysql://localhost:3306";
-    private String bd = "norvaz";
+    private String punto_de_enlace = "jdbc:mysql://localhost:3306/norvaz";
     private String user = "root";
-    private String passwrod = "";
-    private final String url = host+"/"+bd;
-    
-    
-    
-    
+    private String password = "";
 
     public Conexion() {
     }
@@ -35,7 +29,7 @@ public class Conexion {
        try {
             Class.forName("com.mysql.jdbc.Driver");
             
-                con = DriverManager.getConnection(url,user,passwrod);
+                con = DriverManager.getConnection(punto_de_enlace,user,password);
                 
             } catch (ClassNotFoundException | SQLException ex ) { 
                /*JOptionPane.showMessageDialog(null,"Error al conectar la BD: "+ex);*/

@@ -34,12 +34,15 @@ function validarDatos(){
             return false;}
             }
             
-            
-            if(telefono.length == 0){
-                alertify.alert("Error","El campo telefono es requerido").set('label','ok');
-                return false;
-            }
-            
+         if (telefono == "") {
+        alertify.alert("Error", "Complete todo los items").set('label', 'ok');
+        return false;
+    }
+    if (telefono.length >= 10 ) {
+         alertify.alert("Error", "El telefono debe tener 9 digitos").set('label', 'ok');
+        return false;
+    }
+              
             if(document.registro.txt_regisContrasena.value.length>7){
                 
             if(document.registro.txt_regisContrasena.value == document.registro.txt_regisConfirmaContrasena.value){
@@ -117,6 +120,10 @@ function validarDatos(){
             
              if((pass2.length == 0 || pass1.length == 0) || pass1 != pass2 ){
                  alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
+                return false;
+            }
+            if(pass1.length<7 && pass2.length<7){
+                 alertify.alert("Error","la contraseña debe tener 8 caracteres minimo").set('label','ok');
                 return false;
             }
            
@@ -204,6 +211,10 @@ function validarDatos(){
                  alertify.alert("Error","El Email no coincide").set('label','ok');
                 return false;   
             }
+            if (telefono.length >= 10 ) {
+                 alertify.alert("Error", "El telefono debe tener 9 digitos").set('label', 'ok');
+                return false;
+            }
 
         }
         
@@ -233,10 +244,20 @@ function validarDatos(){
             }if(nroCasa == ""){
                  alertify.alert("Error","Complete todo los items").set('label','ok');
                 return false;
-            }if(telefono == ""){
-                 alertify.alert("Error","Complete todo los items").set('label','ok');
-                return false;
-            }if(requerimiento == ""){
+            }
+            if(telefono.length >= 9){
+               if (telefono == "") {
+                   alertify.alert("Error", "Complete todo los items").set('label', 'ok');
+                   return false;
+                    }else{
+                        return true;
+                    }
+            }else{
+                   alertify.alert("Error", "El telefono debe tener 9 digitos").set('label', 'ok');
+                   return false;
+            }
+            
+            if(requerimiento == ""){
                  alertify.alert("Error","Complete todo los items").set('label','ok');
                 return false;
             }             
@@ -294,6 +315,9 @@ function validarDatos(){
             }if(emial == ""){
                 alertify.alert("Error","EL campo email esta vacio").set('label','ok');
                 return false;
+            }if (telefono.length >= 10 ) {
+                 alertify.alert("Error", "El telefono debe tener 9 digitos").set('label', 'ok');
+                return false;
             }if(telefono == ""){
                 alertify.alert("Error","EL campo telefono esta vacio").set('label','ok');
                 return false;
@@ -306,6 +330,10 @@ function validarDatos(){
             }if(pass1 != pass2){
                 alertify.alert("Error","Las contraseñas no coinciden").set('label','ok');
                 return false;
+            }
+            if(pass1.length<7 && pass2.length<7){
+               alertify.alert("Error","la contraseña debe tener 8 caracteres minimo").set('label','ok');
+               return false;
             }
             
         }
@@ -343,6 +371,17 @@ function validarDatos(){
                 alertify.alert("Error","Categoria : seleccione un elemento").set('label','ok');
                 return false;
             }
+            if(codproductos.length < 8){
+                alertify.alert("Error","el codigo de producto debe ser al menos de 8 digitos").set('label','ok');
+                return false;
+            }if(stock.length < 1){
+                alertify.alert("Error","El campo stock debe ser de almenos 1 item").set('label','ok');
+                return false;
+            }if(preIVA < 500){
+                alertify.alert("Error","el precio debe ser de al menos 500").set('label','ok');
+                return false;
+            }
+            
             
 
         }
@@ -422,11 +461,12 @@ function validarDatos(){
             alertify.alert("Error","El rut es invalido").set('label','ok');
             return false;}
             }
-            
-            
-            
             if(telefono == ""){
                 alertify.alert("Error","EL campo telefono esta vacio").set('label','ok');
+                return false;
+            }
+            if (telefono.length >= 10 ) {
+                 alertify.alert("Error", "El telefono debe tener 9 digitos").set('label', 'ok');
                 return false;
             }
         }
