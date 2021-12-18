@@ -226,7 +226,7 @@ switch (rol){
     if(mensaje == "true"){
     alertify.alert("Exito","se a agregado una direccion").set('label','ok');
     }
-    if(mensaje == "Aviso"){
+    if(mensaje == "false"){
     alertify.alert("Error","ya tienes una direccion agregada").set('label','ok');
     }
     
