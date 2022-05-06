@@ -2,6 +2,7 @@
 package controlador;
 
 import Entidad.Servicio;
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Crear_Servicio;
-import modelo.Email;
+import modelo.Mail;
 
 /**
  *
@@ -25,7 +26,8 @@ public class Servlet_servicio extends HttpServlet {
 
             ArrayList listaErrores = new ArrayList();
             Crear_Servicio creaServicio = new Crear_Servicio();
-            Email correo = new Email();
+           // Email correo = new Email();
+            Mail m = new Mail();
             Servicio servi = new Servicio();
             String notificaCorreo = null;
 
@@ -58,7 +60,7 @@ public class Servlet_servicio extends HttpServlet {
                     if(creaServicio.registrarServicio(servi) == 0){
                         response.sendRedirect("usuario-servicios.jsp?value=0");
                     }else{
-                        notificaCorreo = correo.EnviarEmail(emailReceptor,asunto,mensaje);
+                        notificaCorreo = m.enviarCorreo(emailReceptor, asunto, mensaje);
                          response.sendRedirect("usuario-servicios.jsp?value=1");
                          
                     }

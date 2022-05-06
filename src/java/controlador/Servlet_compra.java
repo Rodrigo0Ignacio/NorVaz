@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Crud_Producto;
 import modelo.Crud_Venta;
-import modelo.Email;
+import modelo.Mail;
 
 /**
  *
@@ -31,7 +31,9 @@ public class Servlet_compra extends HttpServlet {
         String pedido =  request.getParameter("Realizar Pedido");
         String rut =  request.getParameter("rut");
         Crud_Venta crud = new Crud_Venta();
-        Email email = new Email();
+        
+        //Email email = new Email();
+        Mail m = new Mail();
         String asunto = "NorVaz - datos de transferencia";
         String contenido = "tiene un plaso de 24 horas para realizar la transferencia";
         String correo = crud.listarEmail(rut);
@@ -75,7 +77,8 @@ public class Servlet_compra extends HttpServlet {
             request.setAttribute("error","Su pedido a sido recibido");
             request.getRequestDispatcher("Ver_pedido.jsp").forward(request, response);
             */
-            email.EnviarEmail(correo, asunto, contenido);
+            //email.EnviarEmail(correo, asunto, contenido);
+            m.enviarCorreo(correo, asunto, contenido);
             response.sendRedirect("Ver_pedido.jsp?value=true");
         }else{
             /*

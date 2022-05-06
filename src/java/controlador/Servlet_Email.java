@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Email;
 import modelo.Leer_Email;
+import modelo.Mail;
 
 /**
  *
@@ -31,7 +31,8 @@ public class Servlet_Email extends HttpServlet {
         String boton = request.getParameter("enviarCorreo");
 
         // GENERAR CLAVE ALEATORIA
-        String claveAleatoria = UUID.randomUUID().toString().toUpperCase().substring(0, 15);
+        String claveAleatoria = UUID.randomUUID().toString().toUpperCase().substring(1, 8);
+ 
 
         // CONTENIDO DEL CORREO
         String asunto = "NorVaz - Restablecer contraseña";
@@ -47,9 +48,12 @@ public class Servlet_Email extends HttpServlet {
 
                     verificaEmail.ModificarCorreo(correoReceptor, claveAleatoria);
                     
-                    // creamos una instancia de la clase Email para enviar el correo
+                    /*
                     Email correo = new Email();
                     correo.EnviarEmail(correoReceptor, asunto, contenido);
+                    */
+                    Mail m = new Mail();
+                    m.enviarCorreo(correoReceptor, asunto, contenido);
                 }
                 
 

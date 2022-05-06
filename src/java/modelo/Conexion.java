@@ -17,9 +17,9 @@ public class Conexion {
     public int resultado = 0;
     public boolean errorDesconeccion = false;
     /*CONEXION*/
-    private String punto_de_enlace = "jdbc:mysql://database-norvaz.cvrglkux4hso.us-east-2.rds.amazonaws.com:3306/norvaz";
-    private String user = "admin";
-    private String password = "programador117";
+    private String punto_de_enlace = "jdbc:mysql://localhost:3306/norvas";
+    private String user = "root";
+    private String password = "";
 
     public Conexion() {
     }

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Crud_Venta;
-import modelo.Email;
+import modelo.Mail;
 
 /**
  *
@@ -35,7 +35,8 @@ public class Servlet_EditarVenta extends HttpServlet {
         String btn_detallesVenta = request.getParameter("detalles");
         
         
-        Email email = new Email();
+        //Email email = new Email();
+        Mail m = new Mail();
         String asunto = "Norvaz - estado productos";
         String contenido = "tu orden a sido "+estado+" en los proximos minutos resiviras mas informacion";
         
@@ -44,7 +45,8 @@ public class Servlet_EditarVenta extends HttpServlet {
         
         if(btn_editar != null){
             crud.CambiarEstado(id, estado);
-            email.EnviarEmail(correo, asunto, contenido);
+            //email.EnviarEmail(correo, asunto, contenido);
+            m.enviarCorreo(correo, asunto, contenido);
             
             response.sendRedirect("ver-estado.jsp?estado="+estado);
         }
